@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -17,14 +18,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="7">
-                <LinearLayout
+                <RelativeLayout
 
-                    android:layout_weight="1.2"
+                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent">
                     <com.skyfishjy.library.RippleBackground
 
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:id="@+id/content"
@@ -39,24 +39,49 @@
                             android:layout_height="match_parent"
                             android:layout_centerInParent="true"
                             android:id="@+id/centerImage"
-                            android:src="@drawable/cirlce"/>
+                            android:src="@drawable/cirlce"
+                            />
+
+
                     </com.skyfishjy.library.RippleBackground>
 
-                </LinearLayout>
+
+                </RelativeLayout>
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent">
 
-                    <Button
-                        android:layout_width="90dp"
+                    <FrameLayout
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"/>
+                        android:layout_weight="2">
+                    <ImageButton
+                        android:layout_marginTop="30dp"
+                        android:layout_gravity="center"
+
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+
+
+                        android:background="@drawable/ic_add_circle_black_24dp"/>
+                    </FrameLayout>
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Lakshadweep"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:fontFamily="@font/montserrat"
+                        android:layout_marginRight="20dp"/>
+"
                         />
 
 
@@ -64,9 +89,93 @@
             </LinearLayout>
 
             <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="3">
+                android:layout_weight="3"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="Active"
+                        android:fontFamily="@font/montserrat"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:textColor="#FFC107"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:text="1230"
+                        android:fontFamily="@font/montserrat"
+                        android:textSize="18.8sp"
+                        android:gravity="center"
+                        android:textColor="#FFC107"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="Recovered"
+                        android:fontFamily="@font/montserrat"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:textColor="#2CFF07"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:text="1230"
+                        android:fontFamily="@font/montserrat"
+                        android:textSize="18.8sp"
+                        android:gravity="center"
+                        android:textColor="#2CFF07"
+                        />
+
+                </LinearLayout> <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="Deaths"
+                    android:fontFamily="@font/montserrat"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textColor="#FF0724"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:text="1230"
+                    android:fontFamily="@font/montserrat"
+                    android:textSize="18.8sp"
+                    android:gravity="center"
+                    android:textColor="#FF0724"
+                    />
+
+            </LinearLayout>
+
 
             </LinearLayout>
         </LinearLayout>
@@ -75,7 +184,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#0966B8"
+            android:background="@color/colorPrimary"
             android:orientation="vertical">
 
         </LinearLayout>
