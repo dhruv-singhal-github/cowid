@@ -9,40 +9,71 @@
         android:id="@+id/state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="19dp"
         android:text="Maharashtra"
         android:textColor="#000000"
         android:textSize="30dp"
+        app:fontFamily="@font/Montserrat-Black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/confirmed_cases"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="19dp"
         android:text="42"
         android:textColor="#0541B3"
         android:textSize="34dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.648" />
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
+        android:layout_marginTop="21dp"
         android:text="confirmed"
         android:textColor="#0541B3"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:text="State"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/download" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
