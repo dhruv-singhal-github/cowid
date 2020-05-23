@@ -23,9 +23,9 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater=LayoutInflater.from(context);
-        View row=inflater.inflate(R.layout.card, parent, false);
-        Item item=new Item(row);
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View row = inflater.inflate(R.layout.card, parent, false);
+        Item item = new Item(row);
         return item;
     }
 
@@ -39,6 +39,7 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public int getItemCount() {
         return states.length;
     }
+
 
     public class Item extends RecyclerView.ViewHolder{
         TextView state;
