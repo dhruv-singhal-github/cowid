@@ -3,8 +3,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="12dp"
-    android:elevation="25dp"
+    android:layout_marginTop="10dp"
+    android:elevation="45dp"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         android:layout_width="0dp"
         android:layout_weight="2"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="12dp">
 
         <TextView
             android:id="@+id/textView"
@@ -28,7 +28,7 @@
             android:gravity="center"
             android:text="State"
             android:textColor="#696868"
-            android:textSize="15dp"
+            android:textSize="12dp"
             />
 
         <TextView
@@ -42,7 +42,7 @@
             android:gravity="center"
             android:text="AN Islands"
             android:textColor="#333A3A"
-            android:textSize="19dp" />
+            android:textSize="17dp" />
 
 
 
@@ -65,7 +65,7 @@
 
             android:text="Confirmed"
             android:textColor="#E625A1FC"
-            android:textSize="15dp" />
+            android:textSize="12dp" />
 
     <TextView
         android:id="@+id/confirmed_cases"
@@ -77,7 +77,7 @@
         android:fontFamily="@font/montserrat"
         android:text="42"
         android:textColor="@color/colorPrimary"
-        android:textSize="19dp"
+        android:textSize="17dp"
  />
     </LinearLayout>
     <FrameLayout
