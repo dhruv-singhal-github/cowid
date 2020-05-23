@@ -32,7 +32,7 @@
                         app:rb_radius="32dp"
                         app:rb_rippleAmount="2"
                         app:rb_duration="3000"
-                        app:rb_scale="3">
+                        app:rb_scale="2.5">
                         <ImageView
                             android:layout_margin="40dp"
                             android:layout_width="match_parent"
@@ -59,6 +59,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="2">
                     <ImageButton
+
                         android:layout_marginTop="30dp"
                         android:layout_gravity="center"
 
@@ -187,18 +188,17 @@
             android:background="@color/colorPrimary"
             android:orientation="vertical"
             android:paddingTop="5dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp">
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="350dp"
-                android:layout_height="0dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_weight="1"
-                android:elevation="5dp"
-                android:orientation="vertical"
                 android:id="@+id/statesRecycler"
-                android:outlineProvider="bounds"
-                >
-            </androidx.recyclerview.widget.RecyclerView>
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+
+                android:layout_gravity="center"
+
+                android:orientation="vertical"
+               />
         </LinearLayout>
     </LinearLayout>
