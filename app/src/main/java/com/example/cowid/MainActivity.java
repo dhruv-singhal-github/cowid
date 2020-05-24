@@ -48,10 +48,7 @@ public class MainActivity extends AppCompatActivity {
         tvconfirmed=findViewById(R.id.confirmed);
         tvdeaths=findViewById(R.id.deaths);
         tvrecovered=findViewById(R.id.recovered);
-        tvrincrease=findViewById(R.id.rincrease);
-        tvaincrease=findViewById(R.id.aincrease);
-        tvdincrease=findViewById(R.id.dincrease);
-        tvcincrease=findViewById(R.id.cincrease);
+
 
         new GetContacts().execute();
 
@@ -129,10 +126,6 @@ public class MainActivity extends AppCompatActivity {
                     totalc+=confirmed;
                     totald+=deaths;
                     totala+=active;
-                    totalai+=ai;
-                    totaldi+=di;
-                    totalci+=ci;
-                    totalri+=ri;
                     statesa.add(name);
 
                     confirmeda.add( Integer.toString(confirmed));
@@ -178,10 +171,7 @@ public class MainActivity extends AppCompatActivity {
         tvconfirmed.setText(Integer.toString(totalc));
         tvrecovered.setText(Integer.toString(totalr));
         tvdeaths.setText(Integer.toString(totald));
-        tvaincrease.setText("^ "+Integer.toString(totalai));
-        tvcincrease.setText("^ "+Integer.toString(totalci));
-        tvrincrease.setText("^ "+Integer.toString(totalri));
-        tvdincrease.setText("^ "+Integer.toString(totaldi));
+
         recyclerView.setAdapter(new Adapter(MainActivity.this,statesa,confirmeda));
     }
 }

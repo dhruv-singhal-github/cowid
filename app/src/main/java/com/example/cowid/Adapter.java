@@ -35,6 +35,7 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         ((Item)holder).state.setText(states.get(position));
         ((Item)holder).confirmed_cases.setText(cases.get(position));
+
     }
 
     @Override
@@ -46,10 +47,14 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public class Item extends RecyclerView.ViewHolder{
         TextView state;
         TextView confirmed_cases;
+        TextView tv1;
+        TextView tv2;
         public Item(@NonNull View itemView) {
             super(itemView);
             state=(TextView) itemView.findViewById(R.id.state);
             confirmed_cases=(TextView) itemView.findViewById(R.id.confirmed_cases);
+
+
 
         }
     }
