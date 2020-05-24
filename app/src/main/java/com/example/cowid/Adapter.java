@@ -10,12 +10,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Context context;
-    String[] states;
-    String[] cases;
+    ArrayList<String> states;
+    ArrayList<String> cases;
 
-    public Adapter(Context context,String states[], String cases[]){
+    public Adapter(Context context, ArrayList<String> states,ArrayList<String> cases){
         this.context=context;
         this.states=states;
         this.cases=cases;
@@ -31,13 +33,13 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((Item)holder).state.setText(states[position]);
-        ((Item)holder).confirmed_cases.setText(cases[position]);
+        ((Item)holder).state.setText(states.get(position));
+        ((Item)holder).confirmed_cases.setText(cases.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return states.length;
+        return states.size();
     }
 
 

@@ -6,7 +6,7 @@
 
     <solid android:color="#ffffff"/>
     // The desired corner radius. reduce it to keep it less rounded
-    <corners android:radius="8dp" />
+    <corners android:radius="5dp" />
 
     // Add your desired padding
     <padding

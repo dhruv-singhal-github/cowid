@@ -45,14 +45,29 @@
 
                     </com.skyfishjy.library.RippleBackground>
                     <TextView
+                        android:id="@+id/confirmed"
                         android:fontFamily="@font/montserrat"
                         android:textStyle="bold"
                         android:layout_width="match_parent"
+                        android:layout_marginBottom="10dp"
                         android:layout_height="match_parent"
                         android:textColor="#ffff"
                         android:gravity="center"
                         android:textSize="20dp"
-                        android:text="32454"
+                        android:text=""
+                        />
+                    <TextView
+                        android:id="@+id/cincrease"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="10dp"
+                        android:layout_marginTop="46dp"
+                        android:textColor="#ffff"
+                        android:fontFamily="@font/montserrat"
+
                         />
 
 
@@ -81,11 +96,12 @@
                     </FrameLayout>
 
                     <TextView
+                        android:id="@+id/state"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Lakshadweep"
+                        android:text="India"
                         android:textStyle="bold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="#FFFFFF"
@@ -100,6 +116,7 @@
             </LinearLayout>
 
             <LinearLayout
+
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -114,7 +131,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_weight="0.5"
                         android:text="Active"
                         android:fontFamily="@font/montserrat"
                         android:textSize="14sp"
@@ -122,15 +139,26 @@
                         android:textColor="#FFC107"
                         />
                     <TextView
+                        android:id="@+id/active"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="2"
-                        android:text="1230"
+                        android:layout_weight="1"
+                        android:text=""
                         android:fontFamily="@font/montserrat"
-                        android:textSize="18.8sp"
-                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:gravity="center_horizontal|bottom"
                         android:textColor="#FFC107"
                         />
+                    <TextView
+                        android:id="@+id/aincrease"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.4"
+                        android:gravity="center_horizontal|top"
+                        android:text=""
+                        android:textSize="10dp"
+                        android:textColor="#FFC107"
+                        android:fontFamily="@font/montserrat"/>
 
                 </LinearLayout>
                 <LinearLayout
@@ -141,23 +169,35 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_weight="0.5"
                         android:text="Recovered"
                         android:fontFamily="@font/montserrat"
                         android:textSize="14sp"
                         android:gravity="center"
                         android:textColor="#2CFF07"
                         />
+
                     <TextView
+                        android:id="@+id/recovered"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="2"
-                        android:text="1230"
+                        android:layout_weight="1"
                         android:fontFamily="@font/montserrat"
-                        android:textSize="18.8sp"
-                        android:gravity="center"
+                        android:gravity="center_horizontal|bottom"
+                        android:text=""
                         android:textColor="#2CFF07"
-                        />
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/rincrease"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.4"
+                    android:gravity="center_horizontal|top"
+                    android:text=""
+                        android:textSize="10dp"
+                    android:textColor="#2CFF07"
+                    android:fontFamily="@font/montserrat"/>
 
                 </LinearLayout> <LinearLayout
                 android:orientation="vertical"
@@ -167,7 +207,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.5"
                     android:text="Deaths"
                     android:fontFamily="@font/montserrat"
                     android:textSize="14sp"
@@ -175,15 +215,26 @@
                     android:textColor="#FF0724"
                     />
                 <TextView
+                    android:id="@+id/deaths"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:text="1230"
+                    android:layout_weight="1"
+                    android:text=""
                     android:fontFamily="@font/montserrat"
-                    android:textSize="18.8sp"
-                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal|bottom"
                     android:textColor="#FF0724"
                     />
+                <TextView
+                    android:id="@+id/dincrease"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.4"
+                    android:gravity="center_horizontal|top"
+                    android:text=""
+                    android:textSize="10dp"
+                    android:textColor="#FF0724"
+                    android:fontFamily="@font/montserrat"/>
 
             </LinearLayout>
 
@@ -195,7 +246,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#E10043E0"
+            android:background="@color/colorPrimary"
             android:orientation="vertical"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
@@ -209,5 +260,6 @@
                 android:layout_gravity="center"
                 android:orientation="vertical"
                />
+
         </LinearLayout>
     </LinearLayout>
