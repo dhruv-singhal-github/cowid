@@ -217,32 +217,41 @@
             android:paddingTop="0dp"
             android:paddingBottom="5dp">
             <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_border"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp">
+            <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
 
-                android:background="#0DFFFFFF"
+                android:background="#00FFFFFF"
                 android:layout_weight="1.8"
-                android:layout_marginTop="10dp"
-                android:layout_marginHorizontal="20dp">
+               >
                 <TextView
-                    android:elevation="10dp"
-                    android:layout_marginLeft="10dp"
+
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
                     android:fontFamily="@font/montserrat"
                     android:layout_marginTop="10dp"
                     android:id="@+id/location"
-                    android:background="#ffffff"
+                    android:background="#F22A2A33"
                     android:text="State"
                     android:gravity="center"
-                    android:textColor="#FF2A2A33"
+                    android:textColor="#FFFFFF"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:textSize="16sp"
                     android:layout_height="match_parent"/>
                 <TextView
-                    android:elevation="10dp"
+                    android:elevation="5dp"
                     android:fontFamily="@font/montserrat"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -261,11 +270,11 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:paddingBottom="10dp"
                 android:fadeScrollbars="true"
-              android:layout_marginHorizontal="20dp"
 
-                android:background="#0DFFFFFF"
 
-                android:layout_marginBottom="10dp"
+                android:background="#00FFFFFF"
+
+
                 android:id="@+id/statesRecycler"
                 android:layout_width="match_parent"
 
@@ -274,6 +283,6 @@
                 android:layout_gravity="center"
                 android:orientation="vertical"
                />
-
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
