@@ -1,0 +1,246 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/widget_background"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7">
+        <RelativeLayout
+
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <com.skyfishjy.library.RippleBackground
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/content"
+                app:rb_color="#E8138DFA"
+                app:rb_radius="32dp"
+                app:rb_rippleAmount="2"
+                app:rb_duration="3000"
+                app:rb_scale="2.5">
+                <ImageView
+                    android:layout_margin="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/centerImage"
+                    android:src="@drawable/cirlce"
+                    />
+
+
+            </com.skyfishjy.library.RippleBackground>
+            <TextView
+                android:id="@+id/confirmed"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#ffff"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text=""
+                />
+
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+                <ImageButton
+
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+
+                    android:background="@drawable/ic_add_circle_black_24dp"/>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/state"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="India"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:fontFamily="@font/montserrat"
+                android:layout_marginRight="20dp"/>
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:background="@drawable/rounded_border"
+        android:backgroundTint="#0DFFFFFF"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.5"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp">
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Active"
+                android:fontFamily="@font/montserrat"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:textColor="#FFC107"
+                />
+            <TextView
+                android:id="@+id/active"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text=""
+                android:fontFamily="@font/montserrat"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textColor="#FFC107"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Recovered"
+                android:fontFamily="@font/montserrat"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:textColor="#2CFF07"
+                />
+
+            <TextView
+                android:id="@+id/recovered"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#2CFF07"
+                android:textSize="18sp" />
+
+
+
+        </LinearLayout> <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:text="Deaths"
+            android:fontFamily="@font/montserrat"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textColor="#FF0724"
+            />
+        <TextView
+            android:id="@+id/deaths"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text=""
+            android:fontFamily="@font/montserrat"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="#FF0724"
+            />
+
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4">
+                <com.skyfishjy.library.RippleBackground
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/content"
+                    app:rb_color="#E8138DFA"
+                    app:rb_radius="32dp"
+                    app:rb_rippleAmount="2"
+                    app:rb_duration="3000"
+                    app:rb_scale="2.5">
+                    <ImageView
+                        android:layout_margin="40dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:id="@+id/centerImage"
+                        android:src="@drawable/cirlce"
+                        tools:ignore="DuplicateIds" />
+
+
+                </com.skyfishjy.library.RippleBackground>
+            </LinearLayout>
+        </LinearLayout>
+
+</LinearLayout>
