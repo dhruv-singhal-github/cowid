@@ -28,7 +28,7 @@
             android:fontFamily="@font/montserrat"
             android:gravity="center"
             android:text="Andaman and Nicobar Islands"
-            android:textColor="#FC1D1919"
+            android:textColor="#FFFFFF"
             android:textSize="16dp" />
         <TextView
             android:layout_width="match_parent"
@@ -58,7 +58,7 @@
         android:fontFamily="@font/montserrat"
         android:text="42"
 
-        android:textColor="#FC1D1919"
+        android:textColor="#FFFFFF"
         android:textSize="15dp"
  />
         <TextView
