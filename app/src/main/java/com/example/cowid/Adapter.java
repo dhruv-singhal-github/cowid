@@ -16,18 +16,28 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Context context;
     ArrayList<String> states;
     ArrayList<String> cases;
+    cardClickListener mcardclicklistener;
 
-    public Adapter(Context context, ArrayList<String> states,ArrayList<String> cases){
+    public Adapter(Context context, ArrayList<String> states,ArrayList<String> cases,cardClickListener mcardclicklistener){
         this.context=context;
         this.states=states;
         this.cases=cases;
+        this.mcardclicklistener=mcardclicklistener;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View row = inflater.inflate(R.layout.card, parent, false);
-        Item item = new Item(row);
+        final View row = inflater.inflate(R.layout.card, parent, false);
+
+        Item item = new Item(row,mcardclicklistener);
+        row.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mcardclicklistener.onClick(row,((TextView)row.findViewById(R.id.state)).getText().toString());
+            }
+        });
+
         return item;
     }
 
@@ -44,18 +54,24 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
 
-    public class Item extends RecyclerView.ViewHolder{
-        TextView state;
+    public class Item extends RecyclerView.ViewHolder implements View.OnClickListener{
+       public TextView state;
         TextView confirmed_cases;
-        TextView tv1;
-        TextView tv2;
-        public Item(@NonNull View itemView) {
+
+        cardClickListener cardclicklistener;
+       public Item(@NonNull View itemView,cardClickListener cardclicklistener) {
             super(itemView);
+            this.cardclicklistener=cardclicklistener;
             state=(TextView) itemView.findViewById(R.id.state);
             confirmed_cases=(TextView) itemView.findViewById(R.id.confirmed_cases);
 
 
 
+        }
+
+        @Override
+        public void onClick(View view) {
+            cardclicklistener.onClick(view, state.getText().toString());
         }
     }
 }

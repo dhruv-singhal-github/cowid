@@ -269,18 +269,14 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:paddingBottom="10dp"
                 android:fadeScrollbars="true"
-
-
                 android:background="#00FFFFFF"
-
-
                 android:id="@+id/statesRecycler"
                 android:layout_width="match_parent"
-
                 android:layout_height="0dp"
                 android:layout_weight="10"
                 android:layout_gravity="center"
                 android:orientation="vertical"
+                android:clickable="true"
                />
             </LinearLayout>
         </LinearLayout>
