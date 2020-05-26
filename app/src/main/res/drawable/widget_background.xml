@@ -7,12 +7,12 @@
     <gradient
         android:angle="90"
         android:endColor="#1E0505"
-        android:startColor="#DC0E0E68"
+        android:startColor="#171232"
         />
 
+    <corners
+        android:radius="35dp"></corners>
 
-    // The desired corner radius. reduce it to keep it less rounded
-    <corners android:radius="10dp" />
 
     // Add your desired padding
     <padding

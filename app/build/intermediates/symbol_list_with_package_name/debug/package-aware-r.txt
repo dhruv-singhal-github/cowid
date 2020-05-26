@@ -702,6 +702,9 @@ drawable rounded_border
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable whitecircle
+drawable widget_background
+drawable widget_card
+drawable widget_circle
 font montserrat
 id ALT
 id CTRL
@@ -733,15 +736,14 @@ id add
 id alertTitle
 id all
 id always
-id appwidget_text
 id async
 id barrier
 id beginning
 id blocking
 id bottom
 id buttonPanel
+id ccv
 id center
-id centerImage
 id center_horizontal
 id center_vertical
 id chains
@@ -840,6 +842,8 @@ id src_over
 id standard
 id start
 id state
+id stateConfirmedCases
+id stateName
 id statesRecycler
 id strokeRipple
 id submenuarrow
