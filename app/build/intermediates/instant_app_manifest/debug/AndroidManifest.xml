@@ -34,7 +34,7 @@
 
         <activity
             android:name="com.example.cowid.MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="fullSensor" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

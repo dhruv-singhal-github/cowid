@@ -1,12 +1,20 @@
 package com.example.cowid;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -34,8 +42,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
 
     ArrayList<String> confirmeda=new ArrayList<String>();
     ArrayList<HashMap<String,String>> statelist=new ArrayList<HashMap<String, String>>();
-
-
+    CircularCompletionView ccv;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
 
 
         final RippleBackground rippleBackground=findViewById(R.id.content);
-        ImageView imageView=findViewById(R.id.centerImage);
         rippleBackground.startRippleAnimation();
         recyclerView =  findViewById(R.id.statesRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -55,6 +61,10 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         tvrecovered=findViewById(R.id.recovered);
         location=findViewById((R.id.location));
         namest=findViewById(R.id.state);
+//        ccv = (CircularCompletionView) findViewById(R.id.ccv);
+//        ccv.setCompletionPercentage(66);
+//        ccv.setTextSize(16);
+//        ccv.setStrokeSize(20);
 
         new GetContacts().execute();
 
@@ -182,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         dialogue.dismiss();
         location.setText("State");
         namest.setText("India");
-       tvactive.setText(Integer.toString(totala));
+        tvactive.setText(Integer.toString(totala));
         tvconfirmed.setText(Integer.toString(totalc));
         tvrecovered.setText(Integer.toString(totalr));
         tvdeaths.setText(Integer.toString(totald));
@@ -315,4 +325,6 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
             recyclerView.setAdapter(new Adapter(MainActivity.this,statesa,confirmeda,MainActivity.this));
         }
     }
+
 }
+
