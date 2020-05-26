@@ -741,8 +741,8 @@ int id beginning 0x7f090020
 int id blocking 0x7f090021
 int id bottom 0x7f090022
 int id buttonPanel 0x7f090023
-int id ccv 0x7f090024
-int id center 0x7f090025
+int id center 0x7f090024
+int id centerImage 0x7f090025
 int id center_horizontal 0x7f090026
 int id center_vertical 0x7f090027
 int id chains 0x7f090028

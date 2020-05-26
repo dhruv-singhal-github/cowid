@@ -1,4 +1,4 @@
-#Tue May 26 18:05:20 IST 2020
+#Tue May 26 18:22:13 IST 2020
 base.0=C\:\\Users\\sriha\\AndroidStudioProjects\\COVID\\cowid\\app\\build\\intermediates\\dex\\debug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
