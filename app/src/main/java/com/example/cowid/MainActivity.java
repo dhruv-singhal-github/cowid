@@ -61,10 +61,10 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         tvrecovered=findViewById(R.id.recovered);
         location=findViewById((R.id.location));
         namest=findViewById(R.id.state);
-        ccv = (CircularCompletionView) findViewById(R.id.ccv);
-        ccv.setCompletionPercentage(66);
-        ccv.setTextSize(16);
-        ccv.setStrokeSize(20);
+//        ccv = (CircularCompletionView) findViewById(R.id.ccv);
+//        ccv.setCompletionPercentage(66);
+//        ccv.setTextSize(16);
+//        ccv.setStrokeSize(20);
 
         new GetContacts().execute();
 
