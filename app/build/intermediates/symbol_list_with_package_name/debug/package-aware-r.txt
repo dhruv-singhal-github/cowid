@@ -742,8 +742,8 @@ id beginning
 id blocking
 id bottom
 id buttonPanel
-id ccv
 id center
+id centerImage
 id center_horizontal
 id center_vertical
 id chains
