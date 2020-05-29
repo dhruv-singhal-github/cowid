@@ -53,8 +53,8 @@ public class NewAppWidget extends AppWidgetProvider {
         views.setTextViewText(R.id.wactive, countryActive);
         views.setTextViewText(R.id.wrecovered, countryRecovered);
         views.setTextViewText(R.id.wdeaths, countryDeaths);
-        views.setTextViewText(R.id.substate, state);
-        views.setTextViewText(R.id.wsactive, stateActive);
+        views.setTextViewText(R.id.subState, state);
+        views.setTextViewText(R.id.wsActive, stateActive);
 
 
 

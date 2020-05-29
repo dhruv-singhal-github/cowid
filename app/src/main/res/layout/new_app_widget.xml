@@ -223,11 +223,11 @@
             android:layout_weight="1"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/substate"
+                android:id="@+id/subState"
                 android:padding="8dp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:text="Andaman and Nicobar Islands"
                 android:layout_gravity="center"
                 android:fontFamily="@font/roboto"
@@ -236,32 +236,71 @@
                 android:gravity="center"
                 android:textColor="#2C2C2C"
                 />
-            <TextView
-
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".5"
                 android:elevation="10dp"
-                android:gravity="center"
-                android:id="@+id/wsactive"
-                android:textColor="#1A254A"/>
-
-            <TextView
-                android:id="@+id/wsrecovered"
-                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:text="Active"
+                    android:gravity="center"
+                    android:textColor="#1A254A"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:id="@+id/wsActive"
+                    android:textColor="#1A254A"/>
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="confirmed"
-                android:layout_weight="0.5"
-                android:textColor="#1C6EDF"/>
-            <TextView
+                android:layout_weight=".5"
+                android:elevation="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:text="Recovered"
+                    android:gravity="center"
+                    android:textColor="#1A254A"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:id="@+id/wsRecovered"
+                    android:textColor="#1A254A"/>
+            </LinearLayout>
 
-                android:gravity="center"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/wsdeaths"
-                android:layout_weight="0.5"
-                android:textColor="#1C6EDF"/>
+                android:layout_weight=".5"
+                android:elevation="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:text="Deaths"
+                    android:gravity="center"
+                    android:textColor="#1A254A"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:id="@+id/wsDeaths"
+                    android:textColor="#1A254A"/>
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 
