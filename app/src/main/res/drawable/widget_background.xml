@@ -6,12 +6,12 @@
 
     <gradient
         android:angle="90"
-        android:endColor="#1E0505"
-        android:startColor="#171232"
+        android:endColor="#9A1E0505"
+        android:startColor="#9A0A011A"
         />
 
     <corners
-        android:radius="35dp"></corners>
+        android:radius="0dp"></corners>
 
 
     // Add your desired padding

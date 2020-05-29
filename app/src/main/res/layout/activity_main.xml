@@ -23,6 +23,15 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent">
+                    <ImageButton
+                        android:id="@+id/back"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:src="@drawable/ic_arrow_back_black_24dp"
+                        />
                     <com.skyfishjy.library.RippleBackground
 
                         android:layout_width="match_parent"
@@ -48,7 +57,7 @@
                     </com.skyfishjy.library.RippleBackground>
                     <TextView
                         android:id="@+id/confirmed"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/roboto"
                         android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -94,8 +103,8 @@
                         android:textStyle="bold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="#FFFFFF"
-                        android:textSize="20sp"
-                        app:fontFamily="@font/montserrat"
+                        android:textSize="23sp"
+                        app:fontFamily="@font/roboto"
                         android:layout_marginRight="20dp"/>
 
 
@@ -127,9 +136,9 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.5"
                         android:text="Active"
-                        android:fontFamily="@font/montserrat"
-                        android:textSize="14sp"
-                        android:gravity="center"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="16sp"
+                        android:gravity="center_horizontal|bottom"
                         android:textColor="#FFC107"
                         />
                     <TextView
@@ -138,8 +147,8 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:text=""
-                        android:fontFamily="@font/montserrat"
-                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="20sp"
                         android:gravity="center"
                         android:textColor="#FFC107"
                         />
@@ -156,9 +165,9 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.5"
                         android:text="Recovered"
-                        android:fontFamily="@font/montserrat"
-                        android:textSize="14sp"
-                        android:gravity="center"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="16sp"
+                        android:gravity="center_horizontal|bottom"
                         android:textColor="#2CFF07"
                         />
 
@@ -167,11 +176,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/roboto"
                         android:gravity="center"
                         android:text=""
                         android:textColor="#2CFF07"
-                        android:textSize="18sp" />
+                        android:textSize="20sp" />
 
 
 
@@ -185,9 +194,9 @@
                     android:layout_height="0dp"
                     android:layout_weight="0.5"
                     android:text="Deaths"
-                    android:fontFamily="@font/montserrat"
-                    android:textSize="14sp"
-                    android:gravity="center"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="16sp"
+                    android:gravity="center_horizontal|bottom"
                     android:textColor="#FF0724"
                     />
                 <TextView
@@ -196,8 +205,8 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text=""
-                    android:fontFamily="@font/montserrat"
-                    android:textSize="18sp"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="20sp"
                     android:gravity="center"
                     android:textColor="#FF0724"
                     />
@@ -238,7 +247,7 @@
 
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
-                    android:fontFamily="@font/montserrat"
+                    android:fontFamily="@font/roboto"
                     android:layout_marginTop="10dp"
                     android:id="@+id/location"
                     android:background="#F22A2A33"
@@ -251,7 +260,7 @@
                     android:layout_height="match_parent"/>
                 <TextView
                     android:elevation="5dp"
-                    android:fontFamily="@font/montserrat"
+                    android:fontFamily="@font/roboto"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_width="0dp"

@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
     private String TAG = MainActivity.class.getSimpleName();
     RecyclerView recyclerView;
     TextView tvconfirmed,tvactive,tvdeaths,tvrecovered,location,namest;
+    ImageButton back;
     ArrayList<String> statesa=new ArrayList<String>();
 
     ArrayList<String> confirmeda=new ArrayList<String>();
@@ -61,6 +63,23 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         tvrecovered=findViewById(R.id.recovered);
         location=findViewById((R.id.location));
         namest=findViewById(R.id.state);
+        back=findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(area==1){
+                    new GetContacts().execute();
+                }
+
+                else
+                {
+                    MainActivity.this.finish();
+                    System.exit(0);
+                }
+            }
+        });
+
 //        ccv = (CircularCompletionView) findViewById(R.id.ccv);
 //        ccv.setCompletionPercentage(66);
 //        ccv.setTextSize(16);
@@ -81,6 +100,16 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
     }
 
 
+    @Override
+    public void onBackPressed() {
+
+        if(area==1){
+            new GetContacts().execute();
+        }
+        else
+            MainActivity.this.finish();
+    }
+
     private class GetContacts extends AsyncTask<Void, Void, Void> {
         ProgressDialog dialogue;
         int totalc=0;
@@ -90,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
 
     @Override
     protected void onPreExecute() {
+        area=0;
         statesa.clear();
         confirmeda.clear();
         dialogue = new ProgressDialog(MainActivity.this);

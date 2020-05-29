@@ -1,9 +1,42 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="250dp"
+    android:layout_width="match_parent">
+
+
+
+
+<LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="250dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:backgroundTint="#00FFFFFF"
+        >
+        <TextView
+
+            android:layout_gravity="bottom"
+            android:id="@+id/wstate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/upper"
+            android:gravity="center"
+
+            android:text="Andaman and Nicobar Islands"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/roboto" />
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -13,25 +46,20 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.6"
+            android:layout_weight="0.9"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.8">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="India"
-                    android:id="@+id/state"
-                    android:textColor="#ffffff"
-                    android:gravity="center"
-                    android:textSize="70sp"></TextView>
+                android:layout_weight="0.4">
+
             </LinearLayout>
             <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.5"
+                android:layout_weight="0.6"
                 android:orientation="horizontal">
                 <LinearLayout
                     android:layout_width="0dp"
@@ -43,22 +71,28 @@
                         android:layout_height="0dp"
                         android:layout_weight="1">
                         <TextView
+                            android:fontFamily="@font/roboto"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="Active"
-                            android:gravity="center"
-                            android:textColor="#FFC107"></TextView>
+                            android:textSize="13sp"
+                            android:gravity="center_horizontal|bottom"
+                            android:textColor="#FFFFFF"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1">
                         <TextView
+
+                            android:fontFamily="@font/roboto"
+                            android:textSize="18sp"
+                            android:gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/active"
+                            android:id="@+id/wactive"
                             android:text=""
-                            android:textColor="#FFC107"></TextView>
+                            android:textColor="#0277BD"/>
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -70,23 +104,30 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1">
+
                         <TextView
+                            android:fontFamily="@font/roboto"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:gravity="center_horizontal|bottom"
                             android:text="Recovered"
-                            android:gravity="center"
-                            android:textColor="#2CFF07"></TextView>
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp" />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1">
                         <TextView
+
+                            android:fontFamily="@font/roboto"
+                            android:textSize="18sp"
+                            android:gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/recovered"
+                            android:id="@+id/wrecovered"
                             android:text=""
-                            android:textColor="#2CFF07"></TextView>
+                            android:textColor="#0277BD"/>
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -99,34 +140,65 @@
                         android:layout_height="0dp"
                         android:layout_weight="1">
                         <TextView
+                            android:fontFamily="@font/roboto"
+                            android:textSize="13sp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="Deaths"
-                            android:gravity="center"
-                            android:textColor="#FF0724"></TextView>
+                            android:gravity="center_horizontal|bottom"
+                            android:textColor="#FFFFFF"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1">
                         <TextView
+
+                            android:fontFamily="@font/roboto"
+                            android:textSize="18sp"
+                            android:gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/deaths"
+                            android:id="@+id/wdeaths"
                             android:text=""
-                            android:textColor="#FF0724"></TextView>
+                            android:textColor="#0277BD"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
 
         </LinearLayout>
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4">
+            android:layout_weight="0.4"
+            android:gravity="center"
+            >
 
-        </LinearLayout>
+           <RelativeLayout
+
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="10dp"
+               android:layout_width="80dp"
+               android:layout_height="80dp"
+               android:background="@drawable/widget_circle">
+               <TextView
+
+                   android:layout_centerVertical="true"
+                   android:layout_centerHorizontal="true"
+                   android:id="@+id/wconfirm"
+                   android:gravity="center"
+                   android:textColor="#ffff"
+                   android:fontFamily="@font/roboto"
+                   android:textSize="17dp"
+                   android:text="712324"
+                    android:textStyle="bold"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+
+           </RelativeLayout>
+
+        </RelativeLayout>
 
 
 
@@ -134,63 +206,75 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.02"></LinearLayout>
+        android:layout_weight="0.02"/>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.2"
+        android:layout_weight="0.3"
+        android:backgroundTint="#ffffff"
         android:orientation="horizontal"
-        android:background="@drawable/widget_card">
+        android:background="@drawable/upper">
         <LinearLayout
+            android:id="@+id/bottom"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="horizontal">
             <TextView
+                android:id="@+id/substate"
+                android:padding="8dp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.4"
-                android:text="State"
-                android:gravity="end"
-                android:textColor="#1B3898"
-                ></TextView>
+                android:layout_weight="1"
+                android:text="Andaman and Nicobar Islands"
+                android:layout_gravity="center"
+                android:fontFamily="@font/roboto"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#2C2C2C"
+                />
             <TextView
+
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight=".7"
+                android:layout_weight=".5"
                 android:elevation="10dp"
-                android:id="@+id/stateName"
-                android:textColor="#1A254A"></TextView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.01"></LinearLayout>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+                android:gravity="center"
+                android:id="@+id/wsactive"
+                android:textColor="#1A254A"/>
+
             <TextView
+                android:id="@+id/wsrecovered"
+                android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="confirmed"
-                android:layout_weight="0.4"
-                android:textColor="#1C6EDF"></TextView>
+                android:layout_weight="0.5"
+                android:textColor="#1C6EDF"/>
             <TextView
+
+                android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/stateConfirmedCases"
-                android:layout_weight="0.7"
-                android:textColor="#1C6EDF"></TextView>
+                android:id="@+id/wsdeaths"
+                android:layout_weight="0.5"
+                android:textColor="#1C6EDF"/>
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.005"></LinearLayout>
+        android:layout_weight="0.005"/>
 
 </LinearLayout>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/wcowid"
+        />
+
+</RelativeLayout>

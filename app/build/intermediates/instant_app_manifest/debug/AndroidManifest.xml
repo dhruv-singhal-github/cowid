@@ -15,9 +15,9 @@
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@drawable/cirlce"
+        android:icon="@drawable/cowid"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/cirlce"
+        android:roundIcon="@drawable/cowid"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:testOnly="true"
@@ -34,7 +34,7 @@
 
         <activity
             android:name="com.example.cowid.MainActivity"
-            android:screenOrientation="fullSensor" >
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
