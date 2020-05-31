@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\dhruv\\AndroidStudioProjects\\co\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "C:\\Users\\sriha\\AndroidStudioProjects\\COVID\\cowid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\dhruv\\.gradle\\caches\\transforms-2\\files-2.1\\28d110ee13a0423c314298487ed465f0\\appcompat-1.0.2\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\sriha\\.gradle\\caches\\transforms-2\\files-2.1\\0d47a0d6fa5764cd649078b15eaac482\\appcompat-1.0.2\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
