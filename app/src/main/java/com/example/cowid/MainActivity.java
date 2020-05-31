@@ -173,20 +173,12 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                     Log.e(TAG, "looping " + confirmed);
 
                     // Phone node is JSON Object
-
-
                     // tmp hash map for single contact
-
-
                     // adding each child node to HashMap key => value
-
                     statesa.add(name);
                     confirmeda.add( Integer.toString(confirmed));
                     Log.e(TAG, "got array " + confirmeda.get(i-1));
-
-
                     // adding contact to contact list
-
                 }
             } catch (final JSONException e) {
                 Log.e(TAG, "Json parsing error: " + e.getMessage());

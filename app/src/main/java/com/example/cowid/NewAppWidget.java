@@ -1,8 +1,11 @@
 package com.example.cowid;
 
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,6 +13,8 @@ import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.view.KeyEventDispatcher;
 
 import com.skyfishjy.library.RippleBackground;
 
@@ -65,8 +70,29 @@ public class NewAppWidget extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         // There may be multiple widgets active, so update all of them
-        for (int appWidgetId : appWidgetIds) {
+
+        for(int j = 0; j < appWidgetIds.length; j++)
+        {
+            int appWidgetId = appWidgetIds[j];
             updateAppWidget(context, appWidgetManager, appWidgetId);
+            try {
+                Intent intent = new Intent("android.intent.action.MAIN");
+                intent.addCategory("android.intent.category.LAUNCHER");
+
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                intent.setComponent(new ComponentName(context.getPackageName(),
+                        MainActivity.class.getName()));
+                PendingIntent pendingIntent = PendingIntent.getActivity(
+                        context, 0, intent, 0);
+                RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
+                views.setOnClickPendingIntent(R.id.widgetLayout, pendingIntent);
+                appWidgetManager.updateAppWidget(appWidgetId, views);
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(context.getApplicationContext(),
+                        "There was a problem loading the application: ",
+                        Toast.LENGTH_SHORT).show();
+            }
+
         }
     }
 
