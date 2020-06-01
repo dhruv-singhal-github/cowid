@@ -11,6 +11,7 @@ import org.json.JSONObject;
 
 import static com.example.cowid.NewAppWidget.TAG;
 import static com.example.cowid.NewAppWidget.butt;
+import static com.example.cowid.NewAppWidget.country;
 import static com.example.cowid.NewAppWidget.page;
 
 public class callApi extends AsyncTask<String,String,String> {
@@ -146,7 +147,7 @@ public class callApi extends AsyncTask<String,String,String> {
     @Override
     protected void onPostExecute(String s) {
 
-
+        country=place;
         views.setTextViewText(R.id.wstate, place);
         views.setTextViewText(R.id.wactive, countryActive);
         views.setTextViewText(R.id.wrecovered, countryRecovered);

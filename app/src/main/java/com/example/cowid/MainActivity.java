@@ -116,12 +116,14 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
 
                         intent.putExtra("space", namest.getText().toString());
                         intent.putExtra("flag", area);
-
+                        intent.putExtra("butt",0);
+                        Log.d("btt and page",Integer.toString(area));
                         int[] ids = AppWidgetManager.getInstance(MainActivity.this).getAppWidgetIds(new ComponentName(MainActivity.this, NewAppWidget.class));
                         if (ids != null && ids.length > 0) {
                             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
                             MainActivity.this.sendBroadcast(intent);
                         }
+
                         MainActivity.this.finish();
                     }
                 }

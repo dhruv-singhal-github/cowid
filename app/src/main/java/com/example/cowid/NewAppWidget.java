@@ -158,8 +158,10 @@ public class NewAppWidget extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent) {
          if(intent.getStringExtra("space")!=null) {
              country = intent.getStringExtra("space");
-             intent.getIntExtra("page", page);
-             intent.getIntExtra("butt",butt);
+             page=intent.getIntExtra("flag", page);
+             butt=intent.getIntExtra("butt",butt);
+
+
 
              if(page==1&&butt==1){
                 state= intent.getStringExtra("state");
