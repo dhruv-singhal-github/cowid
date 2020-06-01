@@ -32,7 +32,7 @@ import java.util.Iterator;
 public class NewAppWidget extends AppWidgetProvider {
 
     static String TAG = NewAppWidget.class.getSimpleName();
-    static String country="India";
+    static String country="Andaman and Nicobar Islands";
     static String state="Delhi";
     static String countryActive="100000";
     static String countryRecovered="214320";
@@ -77,11 +77,14 @@ public class NewAppWidget extends AppWidgetProvider {
             updateAppWidget(context, appWidgetManager, appWidgetId);
             try {
                 Intent intent = new Intent("android.intent.action.MAIN");
+                intent.putExtra("place",country);
+                Log.d("placeww",country);
                 intent.addCategory("android.intent.category.LAUNCHER");
 
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 intent.setComponent(new ComponentName(context.getPackageName(),
                         MainActivity.class.getName()));
+
                 PendingIntent pendingIntent = PendingIntent.getActivity(
                         context, 0, intent, 0);
                 RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);

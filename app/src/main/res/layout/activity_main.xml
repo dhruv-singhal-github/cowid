@@ -19,7 +19,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="7">
                 <RelativeLayout
-
+                    android:gravity="center"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent">
@@ -61,12 +61,24 @@
                         android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginBottom="15dp"
                         android:textColor="#ffff"
                         android:gravity="center"
                         android:textSize="20dp"
                         android:text=""
                         />
+                    <TextView
+                        android:textColor="#ffff"
+                        android:id="@+id/deltaconfirmed"
+                        android:textSize="11sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="45dp"
+                        android:gravity="center"
+                        android:text=""
 
+
+                        />
 
 
                 </RelativeLayout>
@@ -75,6 +87,20 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent">
+                    <TextView
+
+                        android:id="@+id/updated"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="right"
+                        android:textColor="#6F7EA2"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.3"
+                        android:text=""
+                        />
 
                     <FrameLayout
                         android:layout_marginRight="20dp"
@@ -103,7 +129,7 @@
                         android:textStyle="bold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="#FFFFFF"
-                        android:textSize="23sp"
+                        android:textSize="21sp"
                         app:fontFamily="@font/roboto"
                         android:layout_marginRight="20dp"/>
 
@@ -152,6 +178,17 @@
                         android:gravity="center"
                         android:textColor="#FFC107"
                         />
+                    <TextView
+                        android:id="@+id/deltaactive"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.4"
+                        android:text=""
+                        android:fontFamily="@font/roboto"
+                        android:textSize="10sp"
+                        android:gravity="center_horizontal|top"
+                        android:textColor="#FFFFFF"
+                        />
 
 
                 </LinearLayout>
@@ -181,7 +218,17 @@
                         android:text=""
                         android:textColor="#2CFF07"
                         android:textSize="20sp" />
-
+                    <TextView
+                        android:id="@+id/deltarecovered"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.4"
+                        android:text=""
+                        android:fontFamily="@font/roboto"
+                        android:textSize="10sp"
+                        android:gravity="center_horizontal|top"
+                        android:textColor="#FFFFFF"
+                        />
 
 
                 </LinearLayout> <LinearLayout
@@ -189,16 +236,16 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="0.5"
-                    android:text="Deaths"
                     android:fontFamily="@font/roboto"
-                    android:textSize="16sp"
                     android:gravity="center_horizontal|bottom"
+                    android:text="Deaths"
                     android:textColor="#FF0724"
-                    />
+                    android:textSize="16sp" />
                 <TextView
                     android:id="@+id/deaths"
                     android:layout_width="match_parent"
@@ -209,6 +256,17 @@
                     android:textSize="20sp"
                     android:gravity="center"
                     android:textColor="#FF0724"
+                    />
+                <TextView
+                    android:id="@+id/deltadeaths"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.4"
+                    android:text=""
+                    android:fontFamily="@font/roboto"
+                    android:textSize="10sp"
+                    android:gravity="center_horizontal|top"
+                    android:textColor="#FFFFFF"
                     />
 
 

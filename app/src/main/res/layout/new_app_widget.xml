@@ -8,10 +8,10 @@
 
 
 <LinearLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+
     android:id="@+id/widgetLayout"
+
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="250dp">
 
@@ -52,7 +52,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.4">
+                android:layout_weight="0.3">
 
             </LinearLayout>
             <LinearLayout
@@ -84,16 +84,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1">
+
                         <TextView
 
-                            android:fontFamily="@font/roboto"
-                            android:textSize="18sp"
-                            android:gravity="center"
+                            android:id="@+id/wactive"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/wactive"
+                            android:fontFamily="@font/roboto"
+                            android:gravity="center"
                             android:text=""
-                            android:textColor="#0277BD"/>
+                            android:textColor="#0277BD"
+                            android:textSize="18sp"
+
+                            app:fontFamily="@font/roboto_medium" />
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -121,7 +124,8 @@
                         android:layout_weight="1">
                         <TextView
 
-                            android:fontFamily="@font/roboto"
+                            android:fontFamily="@font/roboto_medium"
+
                             android:textSize="18sp"
                             android:gravity="center"
                             android:layout_width="match_parent"
@@ -155,7 +159,8 @@
                         android:layout_weight="1">
                         <TextView
 
-                            android:fontFamily="@font/roboto"
+                            android:fontFamily="@font/roboto_medium"
+
                             android:textSize="18sp"
                             android:gravity="center"
                             android:layout_width="match_parent"

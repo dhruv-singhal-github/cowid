@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -37,19 +38,52 @@ import java.util.Iterator;
 public class MainActivity extends AppCompatActivity implements cardClickListener {
     int area=0;
     private String TAG = MainActivity.class.getSimpleName();
+
     RecyclerView recyclerView;
-    TextView tvconfirmed,tvactive,tvdeaths,tvrecovered,location,namest;
+    TextView tvconfirmed,tvactive,tvdeaths,tvrecovered,
+            location,namest,ddeaths,drecovered,dactive,dconfirmed,lastupdated;
     ImageButton back;
     ArrayList<String> statesa=new ArrayList<String>();
 
     ArrayList<String> confirmeda=new ArrayList<String>();
     ArrayList<HashMap<String,String>> statelist=new ArrayList<HashMap<String, String>>();
     CircularCompletionView ccv;
-    
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MainActivity.this.finish();
+
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+
+        Intent imnp=getIntent();
+
+        if(imnp!=null){
+
+            if(imnp.getStringExtra("place")!=null){
+
+                if(!imnp.getStringExtra("place").equals("India")){
+                    Log.d("place",imnp.getStringExtra("place"));
+                    new GetDistricts(imnp.getStringExtra("place")).execute();
+
+                }
+            }
+
+            else{
+                new GetContacts().execute();
+            }
+        }
+
+        else{
+            new GetContacts().execute();
+        }
 
 
         final RippleBackground rippleBackground=findViewById(R.id.content);
@@ -64,6 +98,11 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         location=findViewById((R.id.location));
         namest=findViewById(R.id.state);
         back=findViewById(R.id.back);
+        ddeaths=findViewById(R.id.deltadeaths);
+        dactive=findViewById(R.id.deltaactive);
+        dconfirmed=findViewById(R.id.deltaconfirmed);
+        drecovered=findViewById(R.id.deltarecovered);
+        lastupdated=findViewById(R.id.updated);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
 //        ccv.setTextSize(16);
 //        ccv.setStrokeSize(20);
 
-        new GetContacts().execute();
+
 
 
     }
@@ -116,7 +155,11 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         int totald=0;
         int totala=0;
         int totalr=0;
-
+        int totalcd=0;
+        int totaldd=0;
+        int totalad=0;
+        int totalrd=0;
+        String last;
     @Override
     protected void onPreExecute() {
         area=0;
@@ -160,6 +203,12 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                         totalr=c.getInt("recovered");
                         totald=c.getInt("deaths");
                         totalc=c.getInt("confirmed");
+                        totalcd=c.getInt("deltaconfirmed");
+                        totaldd=c.getInt("deltadeaths");
+                        totalrd=c.getInt("deltarecovered");
+                        totalad=totalcd-totalrd-totaldd;
+                        last=c.getString("lastupdatedtime");
+
                         continue;
                     }
 
@@ -211,6 +260,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
     @Override
     protected void onPostExecute(Void result) {
         super.onPostExecute(result);
+
         dialogue.dismiss();
         location.setText("State");
         namest.setText("India");
@@ -218,6 +268,11 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         tvconfirmed.setText(Integer.toString(totalc));
         tvrecovered.setText(Integer.toString(totalr));
         tvdeaths.setText(Integer.toString(totald));
+        dactive.setText("^ "+Integer.toString(totalad));
+        dconfirmed.setText("^ "+Integer.toString(totalcd));
+        ddeaths.setText("^ "+Integer.toString(totaldd));
+        drecovered.setText("^ "+Integer.toString(totalrd));
+        lastupdated.setText("updated: "+last);
 
         recyclerView.setAdapter(new Adapter(MainActivity.this,statesa,confirmeda,MainActivity.this));
     }
@@ -230,6 +285,10 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         int totald=0;
         int totala=0;
         int totalr=0;
+        int totalad=0;
+        int totalcd=0;
+        int totalrd=0;
+        int totaldd=0;
         String name;
         GetDistricts(String name){
             this.name=name;
@@ -286,6 +345,11 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                             int deaths = c.getInt("deceased");
 
                             int active=c.getInt("active");
+                            JSONObject ca=c.getJSONObject("delta");
+                            int deltarecovered=ca.getInt("recovered");
+                            int deltaconfirmed=ca.getInt("confirmed");
+                            int deltadeaths=ca.getInt("deceased");
+
 
                             Log.e(TAG, "looping " + confirmed);
 
@@ -294,6 +358,11 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                             totalc+=confirmed;
                             totalr+=recovered;
                             totald+=deaths;
+                            totalrd+=deltarecovered;
+                            totalcd+=deltaconfirmed;
+                            totaldd+=deltadeaths;
+
+
 
                             confirmeda.add( Integer.toString(confirmed));
 
@@ -341,6 +410,10 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
             tvconfirmed.setText(Integer.toString(totalc));
             tvrecovered.setText(Integer.toString(totalr));
             tvdeaths.setText(Integer.toString(totald));
+            dactive.setText("^ "+Integer.toString(totalcd-totalrd-totaldd));
+            dconfirmed.setText("^ "+Integer.toString(totalcd));
+            drecovered.setText("^ "+Integer.toString(totalrd));
+            ddeaths.setText("^ "+Integer.toString(totaldd));
 
 
 
