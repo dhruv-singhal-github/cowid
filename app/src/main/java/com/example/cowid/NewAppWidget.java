@@ -32,14 +32,20 @@ import java.util.Iterator;
 public class NewAppWidget extends AppWidgetProvider {
 
     static String TAG = NewAppWidget.class.getSimpleName();
-    static String country="Andaman and Nicobar Islands";
-    static String state="Delhi";
-    static String countryActive="100000";
-    static String countryRecovered="214320";
-    static String countryDeaths="20000";
-    static String stateActive="214400";
-    static String stateRecovered="3245";
-    static String stateDeaths="10";
+    static String country="India";
+    static  String state;
+    static String countryconfirmed;
+    static String countryActive="";
+    static String countryRecovered="";
+    static String countryDeaths="";
+
+    static String dActive="";
+    static String dRecovered="";
+    static String dDeaths="";
+    static String dConfirmed;
+
+    static int page=0;
+    static int butt=0;
 //    static TextView tvconfirmed,tvactive,tvdeaths,tvrecovered,location,namest;
 //    static ArrayList<String> statesa=new ArrayList<String>();
 //    static ArrayList<String> confirmeda=new ArrayList<String>();
@@ -53,18 +59,117 @@ public class NewAppWidget extends AppWidgetProvider {
                                 int appWidgetId) {
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
+
+
 //        new MainActivity.GetContacts().execute();
-        views.setTextViewText(R.id.wstate, country);
-        views.setTextViewText(R.id.wactive, countryActive);
-        views.setTextViewText(R.id.wrecovered, countryRecovered);
-        views.setTextViewText(R.id.wdeaths, countryDeaths);
-        views.setTextViewText(R.id.subState, state);
-        views.setTextViewText(R.id.wsActive, stateActive);
+
+        new callApi(country,appWidgetManager,appWidgetId,views,countryActive,countryconfirmed,countryDeaths,countryRecovered).execute();
+
+//        if(butt==0&&page==0){
+//
+//            HttpHandler sh = new HttpHandler();
+//            // Making a request to url and getting response
+//            String url = "https://api.covid19india.org/state_district_wise.json";
+//            String jsonStr = sh.makeServiceCall(url);
+//
+//            Log.e(TAG, "Response from url: " + jsonStr);
+//            if (jsonStr != null) {
+//                try {
+//
+//                    JSONObject obj=new JSONObject(jsonStr);
+//                    // Getting JSON Array node
+//                    JSONArray states = obj.getJSONArray("statewise");
+//                    Log.e(TAG, "got the JSONArray: " + jsonStr);
+//                    // looping through All Contacts
+//                    for (int i = 0; i < states.length(); i++) {
+//
+//
+//                        JSONObject c = states.getJSONObject(i);
+//                        if (i == 0) {
+//                            countryActive =Integer.toString( (c.getInt("active")));
+//                            countryRecovered = Integer.toString(c.getInt("recovered"));
+//                            countryDeaths = Integer.toString(c.getInt("deaths"));
+//                            countryconfirmed= Integer.toString(c.getInt("confirmed"));
+////                             = c.getInt("deltaconfirmed");
+////                            totaldd = c.getInt("deltadeaths");
+////                            totalrd = c.getInt("deltarecovered");
+////                            totalad = totalcd - totalrd - totaldd;
+////                            last = c.getString("lastupdatedtime");
+//
+//                            break;
+//                        }
+//
+//                    }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//                } catch (final JSONException e) {
+//                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+//
+//
+//                }
+//
+//            } else {
+//                Log.e(TAG, "Couldn't get json from server.");
+//
+//            }
+//
+//
+//
+//            //India
+//        }
+//
+//
+//        else if((butt==0&&page==0)||(butt==1&&page==0)){
+//
+//
+//            //state
+//        }
+//
+//
+//            else {
+//                                                            //district
+//        }
+//
+//
+//
+
+//        views.setTextViewText(R.id.wactive, countryActive);
+//        views.setTextViewText(R.id.wrecovered, countryRecovered);
+//        views.setTextViewText(R.id.wdeaths, countryDeaths);
+       // views.setTextViewText(R.id.subState, state);
+       // views.setTextViewText(R.id.wsActive, stateActive);
 
 
 
         // Instruct the widget manager to update the widget
-        appWidgetManager.updateAppWidget(appWidgetId, views);
+
+    }
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+         if(intent.getStringExtra("space")!=null) {
+             country = intent.getStringExtra("space");
+             intent.getIntExtra("page", page);
+             intent.getIntExtra("butt",butt);
+
+             if(page==1&&butt==1){
+                state= intent.getStringExtra("state");
+             }
+
+
+         }
+        super.onReceive(context, intent);
+
+
     }
 
     @Override
@@ -103,6 +208,14 @@ public class NewAppWidget extends AppWidgetProvider {
     public void onEnabled(Context context) {
         // Enter relevant functionality for when the first widget is created
 
+        // Construct the RemoteViews object
+        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
+//        new MainActivity.GetContacts().execute();
+        views.setTextViewText(R.id.wstate, "India");
+        views.setTextViewText(R.id.wactive, countryActive);
+        views.setTextViewText(R.id.wrecovered, countryRecovered);
+        views.setTextViewText(R.id.wdeaths, countryDeaths);
+        // views.setTextViewText(R.id.subState, state);
 
     }
 

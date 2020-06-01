@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
     RecyclerView recyclerView;
     TextView tvconfirmed,tvactive,tvdeaths,tvrecovered,
             location,namest,ddeaths,drecovered,dactive,dconfirmed,lastupdated;
-    ImageButton back;
+    ImageButton back,mainbt;
     ArrayList<String> statesa=new ArrayList<String>();
 
     ArrayList<String> confirmeda=new ArrayList<String>();
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
 
         Intent imnp=getIntent();
 
@@ -74,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                     new GetDistricts(imnp.getStringExtra("place")).execute();
 
                 }
+                else new GetContacts().execute();
             }
 
             else{
@@ -98,12 +101,31 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         location=findViewById((R.id.location));
         namest=findViewById(R.id.state);
         back=findViewById(R.id.back);
+        mainbt=findViewById(R.id.mainbt);
         ddeaths=findViewById(R.id.deltadeaths);
         dactive=findViewById(R.id.deltaactive);
         dconfirmed=findViewById(R.id.deltaconfirmed);
         drecovered=findViewById(R.id.deltarecovered);
         lastupdated=findViewById(R.id.updated);
+        mainbt.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(MainActivity.this, NewAppWidget.class);
+                        intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
 
+                        intent.putExtra("space", namest.getText().toString());
+                        intent.putExtra("flag", area);
+
+                        int[] ids = AppWidgetManager.getInstance(MainActivity.this).getAppWidgetIds(new ComponentName(MainActivity.this, NewAppWidget.class));
+                        if (ids != null && ids.length > 0) {
+                            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
+                            MainActivity.this.sendBroadcast(intent);
+                        }
+                        MainActivity.this.finish();
+                    }
+                }
+        );
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

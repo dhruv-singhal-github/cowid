@@ -108,7 +108,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="2">
                     <ImageButton
-
+                        android:id="@+id/mainbt"
                         android:layout_marginTop="20dp"
                         android:layout_gravity="center"
 

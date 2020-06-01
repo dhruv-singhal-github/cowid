@@ -2267,12 +2267,9 @@
                 {
                     "source": "C:\\Users\\dhruv\\AndroidStudioProjects\\cowid\\app\\src\\main\\res\\values\\preloaded_fonts.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "203"
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
                     },
                     "to": {
                         "startLines": "16",
@@ -2318,9 +2315,11 @@
                 {
                     "source": "C:\\Users\\dhruv\\AndroidStudioProjects\\cowid\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
-                        "startLines": "-1,-1,-1,-1,-1",
-                        "startColumns": "-1,-1,-1,-1,-1",
-                        "startOffsets": "-1,-1,-1,-1,-1"
+                        "startLines": "-1,2,3,-1,-1",
+                        "startColumns": "-1,4,4,-1,-1",
+                        "startOffsets": "-1,57,105,-1,-1",
+                        "endColumns": "-1,46,50,-1,-1",
+                        "endOffsets": "-1,99,151,-1,-1"
                     },
                     "to": {
                         "startLines": "176,177,178,179,180",
