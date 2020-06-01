@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
     ArrayList<String> confirmeda=new ArrayList<String>();
     ArrayList<HashMap<String,String>> statelist=new ArrayList<HashMap<String, String>>();
     CircularCompletionView ccv;
-
+    String s;
     @Override
     protected void onPause() {
         super.onPause();
@@ -68,11 +68,10 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         Intent imnp=getIntent();
 
         if(imnp!=null){
-
-            if(imnp.getStringExtra("place")!=null){
-
-                if(!imnp.getStringExtra("place").equals("India")){
-                    Log.d("place",imnp.getStringExtra("place"));
+            s=imnp.getStringExtra("place");
+            if(s!=null){
+              
+                if(!(s).equals("India")){
                     new GetDistricts(imnp.getStringExtra("place")).execute();
 
                 }

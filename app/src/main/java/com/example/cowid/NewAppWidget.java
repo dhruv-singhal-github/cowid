@@ -42,7 +42,7 @@ public class NewAppWidget extends AppWidgetProvider {
     static String dActive="";
     static String dRecovered="";
     static String dDeaths="";
-    static String dConfirmed;
+    static String dConfirmed="";
 
     static int page=0;
     static int butt=0;
@@ -158,6 +158,7 @@ public class NewAppWidget extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent) {
          if(intent.getStringExtra("space")!=null) {
              country = intent.getStringExtra("space");
+             Log.d("what's my place",country);
              page=intent.getIntExtra("flag", page);
              butt=intent.getIntExtra("butt",butt);
 
@@ -184,8 +185,9 @@ public class NewAppWidget extends AppWidgetProvider {
             updateAppWidget(context, appWidgetManager, appWidgetId);
             try {
                 Intent intent = new Intent("android.intent.action.MAIN");
+                Log.d("this place",country);
                 intent.putExtra("place",country);
-                Log.d("placeww",country);
+
                 intent.addCategory("android.intent.category.LAUNCHER");
 
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -195,6 +197,7 @@ public class NewAppWidget extends AppWidgetProvider {
                 PendingIntent pendingIntent = PendingIntent.getActivity(
                         context, 0, intent, 0);
                 RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
+                Log.d("placeww",country);
                 views.setOnClickPendingIntent(R.id.widgetLayout, pendingIntent);
                 appWidgetManager.updateAppWidget(appWidgetId, views);
             } catch (ActivityNotFoundException e) {
