@@ -2,14 +2,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="250dp"
+    android:id="@+id/widgetLayout"
     android:layout_width="match_parent">
-
-
-
-
 <LinearLayout
 
-    android:id="@+id/widgetLayout"
 
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -19,20 +15,16 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.15"
-
+        android:layout_weight="0.3"
         android:backgroundTint="#00FFFFFF"
         >
         <ImageView
-
             android:background="#1565C0"
-            android:layout_weight="1.5"
+            android:layout_weight="10"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:src="@drawable/wcowid"
+            android:src="@drawable/cowid_logo"
             />
-
-
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,7 +35,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.9"
+            android:layout_weight="0.6"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -52,7 +44,6 @@
                 <TextView
                     android:gravity="center"
                     android:id="@+id/wstate"
-
                     android:fontFamily="@font/montserrat"
                     android:textColor="#ffffff"
                     android:layout_width="match_parent"
@@ -60,130 +51,13 @@
                     android:paddingLeft="5dp"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginTop="15dp"
-                    android:textSize="25.5sp"
+                    android:layout_marginBottom="15dp"
+                    android:textSize="35sp"
                     android:text=""
                     />
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.6"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1">
-                        <TextView
-                            android:textStyle="bold"
-                            android:fontFamily="@font/roboto"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="Active"
-                            android:textSize="13sp"
-                            android:gravity="center_horizontal|bottom"
-                            android:textColor="#1985C5"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1">
 
-                        <TextView
-
-                            android:id="@+id/wactive"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/montserrat"
-                            android:gravity="center"
-                            android:text=""
-                            android:textColor="#ffff"
-                            android:textSize="15sp"
-
-                            app:fontFamily="@font/roboto_medium" />
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1">
-
-                        <TextView
-                            android:textStyle="bold"
-                            android:fontFamily="@font/roboto"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center_horizontal|bottom"
-                            android:text="Recovered"
-                            android:textColor="#1985C5"
-                            android:textSize="13sp" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1">
-                        <TextView
-
-                            android:fontFamily="@font/montserrat"
-
-                            android:textSize="15sp"
-                            android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:id="@+id/wrecovered"
-                            android:text=""
-                            android:textColor="#ffff"/>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1">
-                        <TextView
-                            android:textStyle="bold"
-                            android:fontFamily="@font/roboto"
-                            android:textSize="13sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="Deaths"
-                            android:gravity="center_horizontal|bottom"
-                            android:textColor="#1985C5"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1">
-                        <TextView
-
-                            android:fontFamily="@font/montserrat"
-
-                            android:textSize="15sp"
-                            android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:id="@+id/wdeaths"
-                            android:text=""
-                            android:textColor="#ffff"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
 
 
         </LinearLayout>
@@ -211,7 +85,7 @@
                    android:fontFamily="@font/roboto"
                    android:textSize="17dp"
                    android:text=""
-                    android:textStyle="bold"
+                   android:textStyle="bold"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"/>
 
@@ -225,8 +99,171 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.02"/>
+        android:layout_weight="0.35"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+                <TextView
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Active"
+                android:textSize="13sp"
+                android:gravity="center_horizontal|bottom"
+                android:textColor="#1985C5"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/wactive"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#1985C5"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4">
+                <TextView
+                    android:id="@+id/deltaactive"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#1985C5"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+                <TextView
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="Recovered"
+                    android:textSize="13sp"
+                    android:gravity="center_horizontal|bottom"
+                    android:textColor="#1985C5"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/wrecovered"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#1985C5"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4">
+                <TextView
+                    android:id="@+id/deltarecovered"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#1985C5"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+                <TextView
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="Deaths"
+                    android:textSize="13sp"
+                    android:gravity="center_horizontal|bottom"
+                    android:textColor="#1985C5"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/wdeaths"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#1985C5"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4">
+                <TextView
+                    android:id="@+id/deltadeaths"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#1985C5"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+        </LinearLayout>
 
+
+    </LinearLayout>
 
 
 
