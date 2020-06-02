@@ -682,6 +682,8 @@ drawable abc_vector_test
 drawable button
 drawable cirlce
 drawable cowid
+drawable cowid_full
+drawable cowid_logo
 drawable download
 drawable example_appwidget_preview
 drawable gradient
@@ -712,6 +714,7 @@ drawable widget_circle
 font montserrat
 font roboto
 font roboto_light
+font roboto_medium
 id ALT
 id CTRL
 id FUNCTION
@@ -768,6 +771,10 @@ id customPanel
 id deaths
 id decor_content_parent
 id default_activity_button
+id deltaactive
+id deltaconfirmed
+id deltadeaths
+id deltarecovered
 id dimensions
 id direct
 id disableHome
@@ -799,6 +806,7 @@ id line3
 id listMode
 id list_item
 id location
+id mainbt
 id message
 id middle
 id multiply
@@ -851,7 +859,6 @@ id start
 id state
 id statesRecycler
 id strokeRipple
-id subState
 id submenuarrow
 id submit_area
 id tabMode
@@ -868,21 +875,19 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
-id tv1
 id tv2
 id uniform
 id up
+id updated
 id useLogo
 id wactive
 id wconfirm
 id wdeaths
+id widgetLayout
 id withText
 id wrap
 id wrap_content
 id wrecovered
-id wsActive
-id wsDeaths
-id wsRecovered
 id wstate
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
