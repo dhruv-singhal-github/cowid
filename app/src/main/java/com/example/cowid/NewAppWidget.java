@@ -1,5 +1,6 @@
 package com.example.cowid;
 
+import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.appwidget.AppWidgetManager;
@@ -9,6 +10,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.SystemClock;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.TextView;
@@ -31,6 +33,7 @@ import java.util.Iterator;
  */
 public class NewAppWidget extends AppWidgetProvider {
 
+    private  PendingIntent service;
     static String TAG = NewAppWidget.class.getSimpleName();
     static String country="India";
     static  String state;
@@ -38,6 +41,8 @@ public class NewAppWidget extends AppWidgetProvider {
     static String countryActive="";
     static String countryRecovered="";
     static String countryDeaths="";
+    AppWidgetManager mawm;
+    int[] appwi;
 
     static String dActive="";
     static String dRecovered="";
@@ -63,99 +68,15 @@ public class NewAppWidget extends AppWidgetProvider {
 
 //        new MainActivity.GetContacts().execute();
 
-        new callApi(country,appWidgetManager,appWidgetId,views,countryActive,countryconfirmed,countryDeaths,countryRecovered).execute();
-
-//        if(butt==0&&page==0){
-//
-//            HttpHandler sh = new HttpHandler();
-//            // Making a request to url and getting response
-//            String url = "https://api.covid19india.org/state_district_wise.json";
-//            String jsonStr = sh.makeServiceCall(url);
-//
-//            Log.e(TAG, "Response from url: " + jsonStr);
-//            if (jsonStr != null) {
-//                try {
-//
-//                    JSONObject obj=new JSONObject(jsonStr);
-//                    // Getting JSON Array node
-//                    JSONArray states = obj.getJSONArray("statewise");
-//                    Log.e(TAG, "got the JSONArray: " + jsonStr);
-//                    // looping through All Contacts
-//                    for (int i = 0; i < states.length(); i++) {
-//
-//
-//                        JSONObject c = states.getJSONObject(i);
-//                        if (i == 0) {
-//                            countryActive =Integer.toString( (c.getInt("active")));
-//                            countryRecovered = Integer.toString(c.getInt("recovered"));
-//                            countryDeaths = Integer.toString(c.getInt("deaths"));
-//                            countryconfirmed= Integer.toString(c.getInt("confirmed"));
-////                             = c.getInt("deltaconfirmed");
-////                            totaldd = c.getInt("deltadeaths");
-////                            totalrd = c.getInt("deltarecovered");
-////                            totalad = totalcd - totalrd - totaldd;
-////                            last = c.getString("lastupdatedtime");
-//
-//                            break;
-//                        }
-//
-//                    }
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//                } catch (final JSONException e) {
-//                    Log.e(TAG, "Json parsing error: " + e.getMessage());
-//
-//
-//                }
-//
-//            } else {
-//                Log.e(TAG, "Couldn't get json from server.");
-//
-//            }
-//
-//
-//
-//            //India
-//        }
-//
-//
-//        else if((butt==0&&page==0)||(butt==1&&page==0)){
-//
-//
-//            //state
-//        }
-//
-//
-//            else {
-//                                                            //district
-//        }
-//
-//
-//
-
-//        views.setTextViewText(R.id.wactive, countryActive);
-//        views.setTextViewText(R.id.wrecovered, countryRecovered);
-//        views.setTextViewText(R.id.wdeaths, countryDeaths);
-       // views.setTextViewText(R.id.subState, state);
-       // views.setTextViewText(R.id.wsActive, stateActive);
-
-
-
-        // Instruct the widget manager to update the widget
+        new callApi(dActive,dConfirmed,dRecovered,dDeaths,state,page, butt, country, appWidgetManager, appWidgetId, views, countryActive, countryconfirmed, countryDeaths, countryRecovered).execute();
 
     }
-
     @Override
     public void onReceive(Context context, Intent intent) {
+
+
+
+
          if(intent.getStringExtra("space")!=null) {
              country = intent.getStringExtra("space");
              Log.d("what's my place",country);
@@ -170,6 +91,8 @@ public class NewAppWidget extends AppWidgetProvider {
 
 
          }
+
+
         super.onReceive(context, intent);
 
 
@@ -178,7 +101,30 @@ public class NewAppWidget extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         // There may be multiple widgets active, so update all of them
-
+   // callApi(String dActive,String dConfirmed,String dRecovered,String dDeaths, String state, int page, int butt, String place, AppWidgetManager appWidgetManager, int appWidgetId, RemoteViews views, String countryActive, String countryconfirmed, String countryDeaths, String countryRecovered) {
+//        final AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+//        final Intent i = new Intent(context, UpdateService.class);
+//        i.putExtra("1",dActive);
+//        i.putExtra("2",dConfirmed);
+//        i.putExtra("3",dRecovered);
+//        i.putExtra("4",dDeaths);
+//        i.putExtra("5",state);
+//        i.putExtra("6",page);
+//        i.putExtra("7",butt);
+//        i.putExtra("8",country);
+//        i.putExtra("10",appWidgetIds);
+//        i.putExtra("12",countryActive);
+//        i.putExtra("13",countryconfirmed);
+//        i.putExtra("14",countryDeaths);
+//        i.putExtra("15",countryRecovered);
+//
+//
+//        if (service == null) {
+//            service = PendingIntent.getService(context, 0, i, PendingIntent.FLAG_CANCEL_CURRENT);
+//        }
+//        manager.setRepeating(AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime(), 60000, service);
+        appwi=appWidgetIds;
+        mawm=appWidgetManager;
         for(int j = 0; j < appWidgetIds.length; j++)
         {
             int appWidgetId = appWidgetIds[j];
@@ -186,7 +132,11 @@ public class NewAppWidget extends AppWidgetProvider {
             try {
                 Intent intent = new Intent("android.intent.action.MAIN");
                 Log.d("this place",country);
+
                 intent.putExtra("place",country);
+                if(butt==1&&page==1){
+                    intent.putExtra("place",state);
+                }
 
                 intent.addCategory("android.intent.category.LAUNCHER");
 
@@ -195,7 +145,7 @@ public class NewAppWidget extends AppWidgetProvider {
                         MainActivity.class.getName()));
 
                 PendingIntent pendingIntent = PendingIntent.getActivity(
-                        context, 0, intent, 0);
+                        context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
                 RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
                 Log.d("placeww",country);
                 views.setOnClickPendingIntent(R.id.widgetLayout, pendingIntent);
@@ -214,12 +164,7 @@ public class NewAppWidget extends AppWidgetProvider {
         // Enter relevant functionality for when the first widget is created
 
         // Construct the RemoteViews object
-        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
-//        new MainActivity.GetContacts().execute();
-        views.setTextViewText(R.id.wstate, "India");
-        views.setTextViewText(R.id.wactive, countryActive);
-        views.setTextViewText(R.id.wrecovered, countryRecovered);
-        views.setTextViewText(R.id.wdeaths, countryDeaths);
+       super.onEnabled(context);
         // views.setTextViewText(R.id.subState, state);
 
     }

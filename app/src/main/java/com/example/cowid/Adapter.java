@@ -1,10 +1,12 @@
 package com.example.cowid;
 
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,12 +19,14 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<String> states;
     ArrayList<String> cases;
     cardClickListener mcardclicklistener;
+    btClickListener btclicklistener;
 
-    public Adapter(Context context, ArrayList<String> states,ArrayList<String> cases,cardClickListener mcardclicklistener){
+    public Adapter(Context context, ArrayList<String> states,ArrayList<String> cases,cardClickListener mcardclicklistener,btClickListener mbtClickListener){
         this.context=context;
         this.states=states;
         this.cases=cases;
         this.mcardclicklistener=mcardclicklistener;
+        this.btclicklistener=mbtClickListener;
     }
 
     @Override
@@ -30,7 +34,7 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         LayoutInflater inflater = LayoutInflater.from(context);
         final View row = inflater.inflate(R.layout.card, parent, false);
 
-        Item item = new Item(row,mcardclicklistener);
+        Item item = new Item(row,mcardclicklistener,btclicklistener);
         row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,13 +61,27 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public class Item extends RecyclerView.ViewHolder implements View.OnClickListener{
        public TextView state;
         TextView confirmed_cases;
-
+        ImageButton bt;
+        btClickListener btclickListener;
         cardClickListener cardclicklistener;
-       public Item(@NonNull View itemView,cardClickListener cardclicklistener) {
+       public Item(@NonNull View itemView, cardClickListener cardclicklistener, final btClickListener btclickListener) {
             super(itemView);
+            this.btclickListener=btclickListener;
             this.cardclicklistener=cardclicklistener;
             state=(TextView) itemView.findViewById(R.id.state);
             confirmed_cases=(TextView) itemView.findViewById(R.id.confirmed_cases);
+            bt=itemView.findViewById(R.id.btp);
+
+            bt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    btclickListener.onBTClick(view,state.getText().toString());
+
+                }
+            });
+
+
+
 
 
 
