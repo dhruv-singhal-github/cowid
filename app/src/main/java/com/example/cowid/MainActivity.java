@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
 
 
             if(stopp!=null){
-                Log.d("hello there",stopp);
+
                 if(!(stopp).equals("India")){
                     new GetDistricts(imnp.getStringExtra("place")).execute();
 
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                         intent.putExtra("space", namest.getText().toString());
                         intent.putExtra("flag", area);
                         intent.putExtra("butt",0);
-                        Log.d("btt and page",Integer.toString(area));
+
                         int[] ids = AppWidgetManager.getInstance(MainActivity.this).getAppWidgetIds(new ComponentName(MainActivity.this, NewAppWidget.class));
                         if (ids != null && ids.length > 0) {
                             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
 
     @Override
     public void onClick(View view, String name) {
-        Log.e(TAG,"clicked" +name);
+
         if(area==0) {
             view.setBackgroundColor(0x61ffffff);
             new GetDistricts(name).execute();
@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         if(area==1){
             intent.putExtra("state",namest.getText().toString());
         }
-        Log.d("btt and page",Integer.toString(area));
+
         int[] ids = AppWidgetManager.getInstance(MainActivity.this).getAppWidgetIds(new ComponentName(MainActivity.this, NewAppWidget.class));
         if (ids != null && ids.length > 0) {
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
@@ -231,14 +231,14 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         String url = "https://api.covid19india.org/data.json";
         String jsonStr = sh.makeServiceCall(url);
 
-        Log.e(TAG, "Response from url: " + jsonStr);
+
         if (jsonStr != null) {
             try {
 
                 JSONObject obj=new JSONObject(jsonStr);
                 // Getting JSON Array node
                 JSONArray states = obj.getJSONArray("statewise");
-                Log.e(TAG, "got the JSONArray: " + jsonStr);
+
                 // looping through All Contacts
                 for (int i = 0; i < states.length(); i++) {
 
@@ -265,7 +265,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                     int deaths = c.getInt("deaths");
                     int active=c.getInt("active");
 
-                    Log.e(TAG, "looping " + confirmed);
+
 
                     // Phone node is JSON Object
                     // tmp hash map for single contact
@@ -291,7 +291,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
             }
 
         } else {
-            Log.e(TAG, "Couldn't get json from server.");
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -368,7 +368,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
             String url = "https://api.covid19india.org/state_district_wise.json";
             String jsonStr = sh.makeServiceCall(url);
 
-            Log.e(TAG, "Response from url: " + jsonStr);
+
             if (jsonStr != null) {
                 try {
 
@@ -378,7 +378,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                     JSONObject states = obj.getJSONObject(name);
                     code=states.getString("statecode");
                     JSONObject districts=states.getJSONObject("districtData");
-                    Log.e(TAG, "got the JSONArray: " + jsonStr);
+
                     // looping through All Contacts
                     Iterator<String> iter = districts.keys();
                     while (iter.hasNext()) {
@@ -399,7 +399,6 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
 
 
 
-                            Log.e(TAG, "looping " + confirmed);
 
 
                             totala+=active;
@@ -416,10 +415,15 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                         } catch (JSONException e) {
                             // Something went wrong!
                         }
+
+
                     }
 
+
+
+
                 } catch (final JSONException e) {
-                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -432,7 +436,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                 }
 
             } else {
-                Log.e(TAG, "Couldn't get json from server.");
+
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -448,9 +452,9 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
             HttpHandler shs = new HttpHandler();
             // Making a request to url and getting response
             String urls = "https://api.covid19india.org/states_daily.json";
-            String jsonStrs = sh.makeServiceCall(urls);
+            String jsonStrs = shs.makeServiceCall(urls);
 
-            Log.e(TAG, "Response from url: " + jsonStrs);
+
             if (jsonStr != null) {
                 try {
                         JSONObject delta=new JSONObject(jsonStrs);
@@ -485,7 +489,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
 
 
                 } catch (final JSONException e) {
-                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -498,7 +502,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                 }
 
             } else {
-                Log.e(TAG, "Couldn't get json from server.");
+
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

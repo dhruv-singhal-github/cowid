@@ -61,6 +61,11 @@ public class callApi extends AsyncTask<String,String,String> {
                  String url = "https://api.covid19india.org/data.json";
                  String jsonStr = sh.makeServiceCall(url);
 
+                 HttpHandler shi = new HttpHandler();
+                 // Making a request to url and getting response
+                 String uri = "https://api.covid19india.org/states_daily.json";
+                 String jsonStri = shi.makeServiceCall(uri);
+
 
                  if (jsonStr != null) {
                      try {
@@ -79,11 +84,6 @@ public class callApi extends AsyncTask<String,String,String> {
                                  countryRecovered = Integer.toString(c.getInt("recovered"));
                                  countryDeaths = Integer.toString(c.getInt("deaths"));
                                  countryconfirmed = Integer.toString(c.getInt("confirmed"));
-                                 dConfirmed="^ "+c.getString("deltaconfirmed");
-                                 dDeaths="^ "+c.getString("deltadeaths");
-                                 dRecovered="^ "+c.getString("deltarecovered");
-                                 dActive="^ "+Integer.toString(c.getInt("deltaconfirmed")-c.getInt("deltadeaths")-c.getInt("deltarecovered"));
-
 
 
 //                             = c.getInt("deltaconfirmed");
@@ -96,6 +96,35 @@ public class callApi extends AsyncTask<String,String,String> {
                              }
 
                          }
+
+                         JSONObject delta=new JSONObject(jsonStri);
+                         JSONArray arr=delta.getJSONArray("states_daily");
+                         int a=0,b=0,c=0;
+                         for(int i=arr.length()-4;i<arr.length();i++){
+
+                             JSONObject today=arr.getJSONObject(i);
+                             if(today.getString("status").equals("Confirmed"))
+                             {
+                                 a =today.getInt("tt");
+                             }
+                             else if(today.getString("status").equals("Recovered")){
+
+                                 b=today.getInt("tt");
+                             }
+
+                             else if(today.getString("status").equals("Deceased")){
+
+                                 c=today.getInt("tt");
+                             }
+
+
+
+
+                         }
+                         dConfirmed="^ "+a;
+                         dRecovered="^ "+b;
+                         dDeaths="^ "+c;
+                         dActive="^ "+Integer.toString(a-b-c);
 
 
                      } catch (final JSONException e) {
@@ -214,13 +243,9 @@ public class callApi extends AsyncTask<String,String,String> {
                  String jsonStr = sh.makeServiceCall(url);
 
 
-                 HttpHandler shi = new HttpHandler();
-                 // Making a request to url and getting response
-                 String uri = "https://api.covid19india.org/districts_daily.json";
-                 String jsonStri = shi.makeServiceCall(uri);
 
 
-                 if (jsonStr != null&&jsonStri!=null) {
+                 if (jsonStr != null) {
                      try {
 
                          JSONObject obj=new JSONObject(jsonStr);
@@ -256,15 +281,6 @@ public class callApi extends AsyncTask<String,String,String> {
                              }
                          }
 
-                         JSONObject  nb=new JSONObject(jsonStri);
-                         JSONObject nb1=nb.getJSONObject("districtsDaily");
-                         JSONObject nb2=nb1.getJSONObject(state);
-                         JSONArray nb3=nb2.getJSONArray(place);
-                         dConfirmed="^ "+Integer.toString(nb3.getJSONObject(nb3.length()-1).getInt("confirmed")-nb3.getJSONObject(nb3.length()-2).getInt("confirmed"));
-                         dActive="^ "+Integer.toString(nb3.getJSONObject(nb3.length()-1).getInt("active")-nb3.getJSONObject(nb3.length()-2).getInt("active"));
-                         dRecovered="^ "+Integer.toString(nb3.getJSONObject(nb3.length()-1).getInt("recovered")-nb3.getJSONObject(nb3.length()-2).getInt("recovered"));
-                         dDeaths="^ "+Integer.toString(nb3.getJSONObject(nb3.length()-1).getInt("deceased")-nb3.getJSONObject(nb3.length()-2).getInt("deceased"));
-
 
 
                      } catch (final JSONException e) {
@@ -299,5 +315,9 @@ public class callApi extends AsyncTask<String,String,String> {
         views.setTextViewText(R.id.wdeltarecovered,dRecovered);
         views.setTextViewText(R.id.wdeltaconformed,dConfirmed);
         appWidgetManager.updateAppWidget(appWidgetId, views);
+        if(butt==1&&page==1){
+            Log.d("ae raja","raja raja kaleja mein samaja ");
+            new callLargeApi(state,place,appWidgetManager,views,appWidgetId).execute();
+        }
     }
 }
