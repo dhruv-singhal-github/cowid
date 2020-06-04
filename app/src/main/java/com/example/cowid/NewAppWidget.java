@@ -149,6 +149,7 @@ public class NewAppWidget extends AppWidgetProvider {
                 RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
                 Log.d("placeww",country);
                 views.setOnClickPendingIntent(R.id.widgetLayout, pendingIntent);
+
                 appWidgetManager.updateAppWidget(appWidgetId, views);
             } catch (ActivityNotFoundException e) {
                 Toast.makeText(context.getApplicationContext(),

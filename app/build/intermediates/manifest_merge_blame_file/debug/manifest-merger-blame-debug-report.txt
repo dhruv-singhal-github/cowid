@@ -6,80 +6,80 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="15"
-8-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml
+8-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="28" />
-9-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml
+9-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:5:5-67
-11-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:5:22-64
+11-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:5:22-64
 12
 13    <application
-13-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:7:5-39:19
+13-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:7:5-39:19
 14        android:allowBackup="true"
-14-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:8:9-35
+14-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:8:9-35
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 15-->[androidx.core:core:1.0.1] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\f2d424e161909cc78a47bc198ec6c153\core-1.0.1\AndroidManifest.xml:22:18-86
 16        android:debuggable="true"
 17        android:icon="@drawable/cowid_log"
-17-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:9:9-43
+17-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:9:9-43
 18        android:label="@string/app_name"
-18-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:10:9-41
+18-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:10:9-41
 19        android:roundIcon="@drawable/cowid_log"
-19-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:11:9-48
+19-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:11:9-48
 20        android:screenOrientation="portrait"
-20-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:12:9-45
+20-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:12:9-45
 21        android:supportsRtl="true"
-21-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:13:9-35
+21-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:13:9-35
 22        android:testOnly="true"
 23        android:theme="@style/AppTheme" >
-23-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:14:9-40
+23-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:14:9-40
 24        <receiver android:name="com.example.cowid.NewAppWidget" >
-24-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:15:9-23:20
-24-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:15:19-47
+24-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:15:9-23:20
+24-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:15:19-47
 25            <intent-filter>
-25-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:16:13-18:29
+25-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:16:13-18:29
 26                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-26-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:17:17-84
-26-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:17:25-81
+26-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:17:17-84
+26-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:17:25-81
 27            </intent-filter>
 28
 29            <meta-data
-29-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:20:13-22:63
+29-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:20:13-22:63
 30                android:name="android.appwidget.provider"
-30-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:21:17-58
+30-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:21:17-58
 31                android:resource="@xml/new_app_widget_info" />
-31-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:22:17-60
+31-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:22:17-60
 32        </receiver>
 33
 34        <service android:name="com.example.cowid.UpdateService" />
-34-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:24:9-49
-34-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:24:18-47
+34-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:24:9-49
+34-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:24:18-47
 35
 36        <activity
-36-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:26:9-34:20
+36-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:26:9-34:20
 37            android:name="com.example.cowid.MainActivity"
-37-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:27:13-41
+37-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:27:13-41
 38            android:screenOrientation="portrait" >
-38-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:28:13-49
+38-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:28:13-49
 39            <intent-filter>
-39-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:29:13-33:29
+39-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:29:13-33:29
 40                <action android:name="android.intent.action.MAIN" />
-40-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:30:17-69
-40-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:30:25-66
+40-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:30:17-69
+40-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:30:25-66
 41
 42                <category android:name="android.intent.category.LAUNCHER" />
-42-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:32:17-77
-42-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:32:27-74
+42-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:32:17-77
+42-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:32:27-74
 43            </intent-filter>
 44        </activity>
 45
 46        <meta-data
-46-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:36:9-38:57
+46-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:36:9-38:57
 47            android:name="preloaded_fonts"
-47-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:37:13-43
+47-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:37:13-43
 48            android:resource="@array/preloaded_fonts" />
-48-->C:\Users\dhruv\AndroidStudioProjects\cowig\app\src\main\AndroidManifest.xml:38:13-54
+48-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:38:13-54
 49    </application>
 50
 51</manifest>

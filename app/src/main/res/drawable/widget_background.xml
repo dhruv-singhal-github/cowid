@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="false">
+<shape
     android:shape="rectangle">
 
     // The width and color of the border
@@ -23,3 +25,35 @@
     </padding>
 
 </shape>
+</item>
+
+    <item android:state_pressed="true">
+        <shape
+            android:shape="rectangle">
+
+            // The width and color of the border
+
+            <gradient
+                android:angle="90"
+                android:endColor="#94FFFFFF"
+                android:startColor="#8AFFFFFF"
+                />
+
+            <corners
+                android:radius="0dp"></corners>
+
+
+            // Add your desired padding
+            <padding
+                android:left="0dp"
+                android:top="0dp"
+                android:right="0dp"
+                android:bottom="0dp"    >
+            </padding>
+
+        </shape>
+    </item>
+
+</selector>
+
+

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\dhruv\\AndroidStudioProjects\\cowig\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-is\\values-is.xml",
+            "outputFile": "C:\\Users\\dhruv\\AndroidStudioProjects\\cowid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-is\\values-is.xml",
             "map": [
                 {
                     "source": "C:\\Users\\dhruv\\.gradle\\caches\\transforms-2\\files-2.1\\f2d424e161909cc78a47bc198ec6c153\\core-1.0.1\\res\\values-is\\values-is.xml",

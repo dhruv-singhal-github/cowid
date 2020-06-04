@@ -253,7 +253,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                         totaldd=c.getInt("deltadeaths");
                         totalrd=c.getInt("deltarecovered");
                         totalad=totalcd-totalrd-totaldd;
-                        last=c.getString("lastupdatedtime");
+
 
                         continue;
                     }
@@ -302,6 +302,74 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
             });
         }
 
+
+
+
+        HttpHandler shs = new HttpHandler();
+        // Making a request to url and getting response
+        String urls = "https://api.covid19india.org/states_daily.json";
+        String jsonStrs = shs.makeServiceCall(urls);
+
+
+        if (jsonStr != null) {
+            try {
+                JSONObject delta=new JSONObject(jsonStrs);
+                JSONArray arr=delta.getJSONArray("states_daily");
+
+                for(int i=arr.length()-4;i<arr.length();i++){
+
+                    JSONObject today=arr.getJSONObject(i);
+                    last=today.getString("date");
+                    if(today.getString("status").equals("Confirmed"))
+                    {
+                        totalcd = today.getInt("tt");
+                    }
+                    else if(today.getString("status").equals("Recovered")){
+
+                        totalrd=today.getInt("tt");
+                    }
+
+                    else if(today.getString("status").equals("Deceased")){
+
+                        totaldd=today.getInt("tt");
+                    }
+
+
+
+
+
+                }
+
+                totalad=totalcd-totaldd-totalrd;
+
+
+
+
+            } catch (final JSONException e) {
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Json parsing error: " + e.getMessage(),
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
+
+            }
+
+        } else {
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getApplicationContext(),
+                            "Couldn't get data from server",
+                            Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+
         return null;
     }
 
@@ -320,7 +388,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         dconfirmed.setText("^ "+Integer.toString(totalcd));
         ddeaths.setText("^ "+Integer.toString(totaldd));
         drecovered.setText("^ "+Integer.toString(totalrd));
-        lastupdated.setText("updated: "+last);
+        lastupdated.setText("Daily Changes: "+last);
 
         recyclerView.setAdapter(new Adapter(MainActivity.this,statesa,confirmeda,MainActivity.this,MainActivity.this));
     }
@@ -337,6 +405,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         int totalcd=0;
         int totalrd=0;
         int totaldd=0;
+        String last;
         String code;
         String name;
         GetDistricts(String name){
@@ -463,6 +532,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                         for(int i=arr.length()-4;i<arr.length();i++){
 
                             JSONObject today=arr.getJSONObject(i);
+                            last=today.getString("date");
                             if(today.getString("status").equals("Confirmed"))
                             {
                                 totalcd = today.getInt(code.toLowerCase());
@@ -529,7 +599,8 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
             dactive.setText("^ "+totalad);
             dconfirmed.setText("^ "+totalcd);
             drecovered.setText("^ "+totalrd);
-            ddeaths.setText("^ "+totaldd);
+           ddeaths.setText("^ "+totaldd);
+            lastupdated.setText("Daily Changes: "+last);
 
 
 
