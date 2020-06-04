@@ -32,8 +32,8 @@ import java.util.Iterator;
  * Implementation of App Widget functionality.
  */
 public class NewAppWidget extends AppWidgetProvider {
+    PendingIntent service;
 
-    private  PendingIntent service;
     static String TAG = NewAppWidget.class.getSimpleName();
     static String country="India";
     static  String state;
@@ -158,6 +158,44 @@ public class NewAppWidget extends AppWidgetProvider {
             }
 
         }
+
+        ComponentName thisWidget = new ComponentName(context,
+                NewAppWidget.class);
+        int[] allWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget);
+
+        // Build the intent to call the service
+        Intent intent = new Intent(context.getApplicationContext(),
+                UpdateService.class);
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, allWidgetIds);
+        intent.putExtra("butt",butt);
+        intent.putExtra("page",page);
+        intent.putExtra("place",country);
+        intent.putExtra("state",state);
+
+        // Update the widgets via the service
+       // context.startService(intent);
+
+     final AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+//        final Intent i = new Intent(context, UpdateService.class);
+//        i.putExtra("1",dActive);
+//        i.putExtra("2",dConfirmed);
+//        i.putExtra("3",dRecovered);
+//        i.putExtra("4",dDeaths);
+//        i.putExtra("5",state);
+//        i.putExtra("6",page);
+//        i.putExtra("7",butt);
+//        i.putExtra("8",country);
+//        i.putExtra("10",appWidgetIds);
+//        i.putExtra("12",countryActive);
+//        i.putExtra("13",countryconfirmed);
+//        i.putExtra("14",countryDeaths);
+//        i.putExtra("15",countryRecovered);
+//
+//
+        if (service == null) {
+            service = PendingIntent.getService(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        }
+        manager.setRepeating(AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime(), 6000, service);
     }
 
     @Override

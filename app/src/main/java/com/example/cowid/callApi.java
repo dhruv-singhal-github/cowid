@@ -52,6 +52,16 @@ public class callApi extends AsyncTask<String,String,String> {
     }
 
     @Override
+    protected void onPreExecute() {
+        if(butt==1&&page==1){
+
+            new callLargeApi(state,place,appWidgetManager,views,appWidgetId).execute();
+        }
+
+
+    }
+
+    @Override
     protected String doInBackground(String... strings) {
 
              if(butt==0&&page==0) {
@@ -301,23 +311,29 @@ public class callApi extends AsyncTask<String,String,String> {
 
     }
 
+
+
     @Override
     protected void onPostExecute(String s) {
-
+//        if(butt==1&&page==1){
+//
+//            new callLargeApi(state,place,appWidgetManager,views,appWidgetId).execute();
+//        }
 
         views.setTextViewText(R.id.wstate, place);
         views.setTextViewText(R.id.wactive, countryActive);
         views.setTextViewText(R.id.wrecovered, countryRecovered);
         views.setTextViewText(R.id.wdeaths, countryDeaths);
         views.setTextViewText(R.id.wconfirm,countryconfirmed);
-        views.setTextViewText(R.id.wdeltaactive,dActive);
-        views.setTextViewText(R.id.wdeltadeaths,dDeaths);
-        views.setTextViewText(R.id.wdeltarecovered,dRecovered);
-        views.setTextViewText(R.id.wdeltaconformed,dConfirmed);
-        appWidgetManager.updateAppWidget(appWidgetId, views);
-        if(butt==1&&page==1){
-            Log.d("ae raja","raja raja kaleja mein samaja ");
-            new callLargeApi(state,place,appWidgetManager,views,appWidgetId).execute();
+        if(!(butt==1&&page==1)) {
+            views.setTextViewText(R.id.wdeltaactive, dActive);
+            views.setTextViewText(R.id.wdeltadeaths, dDeaths);
+            views.setTextViewText(R.id.wdeltarecovered, dRecovered);
+            views.setTextViewText(R.id.wdeltaconformed, dConfirmed);
         }
+            appWidgetManager.updateAppWidget(appWidgetId, views);
+
+
+
     }
 }

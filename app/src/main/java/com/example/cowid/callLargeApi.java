@@ -37,7 +37,7 @@ public class callLargeApi extends AsyncTask<String,String,String> {
     @Override
     protected String doInBackground(String... strings) {
         int i=2;
-        Log.d("o rani","thoda thoda dilon ki pyaas bhujaja");
+
 
         HttpHandler shi = new HttpHandler();
         // Making a request to url and getting response

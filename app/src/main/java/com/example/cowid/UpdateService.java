@@ -1,39 +1,76 @@
 package com.example.cowid;
 
+import android.app.PendingIntent;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.IBinder;
+import android.util.Log;
 import android.widget.RemoteViews;
 
+import java.net.InetAddress;
+
 public class UpdateService extends Service {
+
+    private boolean isInternetAvailable() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(getApplicationContext().CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
+    }
     @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
 
 
-
     @Override
-    public int onStartCommand(Intent i, int flags, int startId) {
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this
+                .getApplicationContext());
+        Log.d("updated","silly");
+            Log.d("internet",isInternetAvailable()?"1":"0");
+        if (isInternetAvailable()==true) {
+            int[] allWidgetIds = intent
+                    .getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
 
+//      ComponentName thisWidget = new ComponentName(getApplicationContext(),
+//              MyWidgetProvider.class);
+//      int[] allWidgetIds2 = appWidgetManager.getAppWidgetIds(thisWidget);
 
-        RemoteViews view = new RemoteViews(getPackageName(), R.layout.new_app_widget);
+            for (int widgetId : allWidgetIds) {
 
-        ComponentName theWidget = new ComponentName(this, NewAppWidget.class);
-        AppWidgetManager manager = AppWidgetManager.getInstance(this);
-        int[] a=i.getIntArrayExtra("10");
-        for(int j=0;j<a.length;j++) {
-            int appw=a[j];
-            new callApi(i.getStringExtra("1"), i.getStringExtra("2"), i.getStringExtra("3")
-                    , i.getStringExtra("4"), i.getStringExtra("5"), i.getIntExtra("6", 0),
-                    i.getIntExtra("7", 0), i.getStringExtra("8"), manager, appw, view, i.getStringExtra("12"),
-                    i.getStringExtra("13"), i.getStringExtra("14"), i.getStringExtra("15"));
+                RemoteViews remoteViews = new RemoteViews(this
+                        .getApplicationContext().getPackageName(),
+                        R.layout.new_app_widget);
+
+                String a = "0";
+                new callApi(a, a, a, a, intent.getStringExtra("state"),
+                        intent.getIntExtra("page", 0), intent.getIntExtra("butt", 0),
+                        intent.getStringExtra("place"), appWidgetManager, widgetId, remoteViews, a, a, a, a).execute();
+                // Register an onClickListener
+//            Intent clickIntent = new Intent(this.getApplicationContext(),
+//                    MyWidgetProvider.class);
+//
+//            clickIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+//            clickIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,
+//                    allWidgetIds);
+//
+//            PendingIntent pendingIntent = PendingIntent.getBroadcast(
+//                    getApplicationContext(), 0, clickIntent,
+//                    PendingIntent.FLAG_UPDATE_CURRENT);
+//            remoteViews.setOnClickPendingIntent(R.id.update, pendingIntent);
+                appWidgetManager.updateAppWidget(widgetId, remoteViews);
+            }
+
         }
+        stopSelf();
 
-        manager.updateAppWidget(theWidget, view);
 
-        return super.onStartCommand(i, flags, startId);
+
+
+        return super.onStartCommand(intent, flags, startId);
     }
 }
