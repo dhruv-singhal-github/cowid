@@ -6,80 +6,86 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="15"
-8-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml
+8-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="28" />
-9-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml
+9-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:5:5-67
-11-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:5:22-64
-12
-13    <application
-13-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:7:5-39:19
-14        android:allowBackup="true"
-14-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:8:9-35
-15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-15-->[androidx.core:core:1.0.1] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\f2d424e161909cc78a47bc198ec6c153\core-1.0.1\AndroidManifest.xml:22:18-86
-16        android:debuggable="true"
-17        android:icon="@drawable/cowid_log"
-17-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:9:9-43
-18        android:label="@string/app_name"
-18-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:10:9-41
-19        android:roundIcon="@drawable/cowid_log"
-19-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:11:9-48
-20        android:screenOrientation="portrait"
-20-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:12:9-45
-21        android:supportsRtl="true"
-21-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:13:9-35
-22        android:testOnly="true"
-23        android:theme="@style/AppTheme" >
-23-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:14:9-40
-24        <receiver android:name="com.example.cowid.NewAppWidget" >
-24-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:15:9-23:20
-24-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:15:19-47
-25            <intent-filter>
-25-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:16:13-18:29
-26                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-26-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:17:17-84
-26-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:17:25-81
-27            </intent-filter>
-28
-29            <meta-data
-29-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:20:13-22:63
-30                android:name="android.appwidget.provider"
-30-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:21:17-58
-31                android:resource="@xml/new_app_widget_info" />
-31-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:22:17-60
-32        </receiver>
-33
-34        <service android:name="com.example.cowid.UpdateService" />
-34-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:24:9-49
-34-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:24:18-47
+11-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+12-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:6:5-76
+12-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:6:22-73
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:7:5-79
+13-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:7:22-76
+14
+15    <application
+15-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:9:5-41:19
+16        android:allowBackup="true"
+16-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:10:9-35
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.0.1] C:\Users\sriha\.gradle\caches\transforms-2\files-2.1\21dadf335ac8035a991bc5e1b16c722a\core-1.0.1\AndroidManifest.xml:22:18-86
+18        android:debuggable="true"
+19        android:icon="@drawable/cowid_log"
+19-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:11:9-43
+20        android:label="@string/app_name"
+20-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:12:9-41
+21        android:roundIcon="@drawable/cowid_log"
+21-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:13:9-48
+22        android:screenOrientation="portrait"
+22-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:14:9-45
+23        android:supportsRtl="true"
+23-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:15:9-35
+24        android:testOnly="true"
+25        android:theme="@style/AppTheme" >
+25-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:16:9-40
+26        <receiver android:name="com.example.cowid.NewAppWidget" >
+26-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:17:9-25:20
+26-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:17:19-47
+27            <intent-filter>
+27-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:18:13-20:29
+28                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+28-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:19:17-84
+28-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:19:25-81
+29            </intent-filter>
+30
+31            <meta-data
+31-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:22:13-24:63
+32                android:name="android.appwidget.provider"
+32-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:23:17-58
+33                android:resource="@xml/new_app_widget_info" />
+33-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:24:17-60
+34        </receiver>
 35
-36        <activity
-36-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:26:9-34:20
-37            android:name="com.example.cowid.MainActivity"
-37-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:27:13-41
-38            android:screenOrientation="portrait" >
-38-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:28:13-49
-39            <intent-filter>
-39-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:29:13-33:29
-40                <action android:name="android.intent.action.MAIN" />
-40-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:30:17-69
-40-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:30:25-66
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:32:17-77
-42-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:32:27-74
-43            </intent-filter>
-44        </activity>
-45
-46        <meta-data
-46-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:36:9-38:57
-47            android:name="preloaded_fonts"
-47-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:37:13-43
-48            android:resource="@array/preloaded_fonts" />
-48-->C:\Users\dhruv\AndroidStudioProjects\cowid\app\src\main\AndroidManifest.xml:38:13-54
-49    </application>
-50
-51</manifest>
+36        <service android:name="com.example.cowid.UpdateService" />
+36-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:26:9-49
+36-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:26:18-47
+37
+38        <activity
+38-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:28:9-36:20
+39            android:name="com.example.cowid.MainActivity"
+39-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:29:13-41
+40            android:screenOrientation="portrait" >
+40-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:30:13-49
+41            <intent-filter>
+41-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:31:13-35:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:32:17-69
+42-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:32:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:34:17-77
+44-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:34:27-74
+45            </intent-filter>
+46        </activity>
+47
+48        <meta-data
+48-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:38:9-40:57
+49            android:name="preloaded_fonts"
+49-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:39:13-43
+50            android:resource="@array/preloaded_fonts" />
+50-->C:\Users\sriha\AndroidStudioProjects\COVID\cowid\app\src\main\AndroidManifest.xml:40:13-54
+51    </application>
+52
+53</manifest>

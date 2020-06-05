@@ -24,9 +24,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.skyfishjy.library.RippleBackground;
 
 import org.json.JSONArray;
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
     private String TAG = MainActivity.class.getSimpleName();
 
     RecyclerView recyclerView;
+    LinearLayout linearLayout;
     TextView tvconfirmed,tvactive,tvdeaths,tvrecovered,
             location,namest,ddeaths,drecovered,dactive,dconfirmed,lastupdated;
     ImageButton back,mainbt;
@@ -97,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
         tvconfirmed=findViewById(R.id.confirmed);
         tvdeaths=findViewById(R.id.deaths);
         tvrecovered=findViewById(R.id.recovered);
+        linearLayout=findViewById(R.id.linearLayout);
         location=findViewById((R.id.location));
         namest=findViewById(R.id.state);
         back=findViewById(R.id.back);
@@ -123,7 +127,9 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
                             MainActivity.this.sendBroadcast(intent);
                         }
 
-                        MainActivity.this.finish();
+//                        MainActivity.this.finish();
+                        Snackbar snackbar=Snackbar.make(linearLayout, namest.getText().toString()+" added to widget", Snackbar.LENGTH_LONG);
+                        snackbar.show();
                     }
                 }
         );
@@ -191,7 +197,9 @@ public class MainActivity extends AppCompatActivity implements cardClickListener
             MainActivity.this.sendBroadcast(intent);
         }
 
-        MainActivity.this.finish();
+//        MainActivity.this.finish();
+        Snackbar snackbar=Snackbar.make(linearLayout, name+" added to widget", Snackbar.LENGTH_LONG);
+        snackbar.show();
 
     }
 
