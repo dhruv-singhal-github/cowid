@@ -11,4 +11,7 @@ and daily changes in them at country, state and district level where the user ca
 
 The Data is fetched and based on the repository maintained for the **API** 
 **<a href="https://api.covid19india.org/">api.covid19india.org</a>**
+
+Application Download Link
+**<a href="https://drive.google.com/file/d/1f_zyjpWqIQ7M8X_-tQaIoAuVjVYYVZYi/view?usp=sharing">cowid.apk</a>**
  
