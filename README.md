@@ -8,8 +8,10 @@ and daily changes in them at country, state and district level where the user ca
 
 
 
-This is based on mobile services which continuously fetch the state at a given time from data endpoints ising REST API
-The Data is fetched and based on the repository maintained for the **API** 
+
+
+
+
 **<a href="https://api.covid19india.org/">api.covid19india.org</a>**
 
 Application Download Link
